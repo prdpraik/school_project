@@ -1,0 +1,29 @@
+sandwhich and hh package for R and lmtest
+
+
+SST=RSS+SSE
+SST--total sum
+RSS--Regression Squared sum
+SSE--Squared sum of errors
+
+ss  | df
+RSS | k
+SSE | n-k-1
+____________
+SST | n-1
+MSS
+MSR = RSS/k
+MSE = SSE/n-k-1
+
+R^2 = RSS/SST
+adjusted R^2 = 1-MSE/MST
+
+
+
+k-- no of variables 
+n-- sample siz
+
+we need to calculate hypothesis test to predict on population but not on sample
+
+H0 -- b1=0
+h1 -- b1!=0

@@ -1,0 +1,145 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-color:#fff;
+}
+
+#tam-custom-navbar-top{
+	background: #ffffff;
+	background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffffff), color-stop(47%, #f6f6f6), color-stop(100%, #ededed));
+	background: -webkit-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+	background: -o-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+	background: -ms-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+	background: linear-gradient(to bottom, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+	border: none;
+	border-bottom:1px solid #ccc;
+	
+}
+#tam-custom-navbar-top .brand{
+	color:#000;
+}
+.parent-enquiry-badge{
+   	left: 128px !important;
+    	position: relative !important;
+    	top: -19px !important;
+    	width: 15px
+}
+#tam-custom-sidebar{
+	background-color:#111 ;
+}
+#tam-custom-sidebar .nav > li > a span{
+	font-size:14px;
+}
+#tam-custom-navbar-top .nav > li > a,#tam-custom-navbar-top .nav > li > a:hover,#tam-custom-navbar-top .nav > li > a:focus{
+	color:#000 !important;
+	background-color:transparent;
+	text-shadow:none;
+}
+#tam-custom-navbar-top .nav li.dropdown > .dropdown-toggle .caret{
+	border-bottom-color: #000;
+    border-top-color: #000;
+}
+.primary-sidebar .nav > li > a i{
+	border-top:none;
+	float:right;
+	padding-right:5px;
+}
+#tam-custom-logo{
+	text-align:center;
+	background-color:#fff;
+	padding:10px 0;
+}
+
+#tam-custom-sidebar .nav > li:nth-child(1) > a:hover, #tam-custom-sidebar .nav > li:nth-child(1) > a:focus,#tam-custom-sidebar .nav > li:nth-child(6) > a:hover, #tam-custom-sidebar .nav > li:nth-child(6) > a:focus,#tam-custom-sidebar .nav > li:nth-child(11) > a:hover, #tam-custom-sidebar .nav > li:nth-child(11) > a:focus,#tam-custom-sidebar .nav > li:nth-child(16) > a:hover, #tam-custom-sidebar .nav > li:nth-child(16) > a:focus,#tam-custom-sidebar .nav > li:nth-child(21) > a:hover, #tam-custom-sidebar .nav > li:nth-child(21) > a:focus{
+	background:#932ab6;
+}
+#tam-custom-sidebar .nav > li:nth-child(2) > a:hover, #tam-custom-sidebar .nav > li:nth-child(2) > a:focus,#tam-custom-sidebar .nav > li:nth-child(7) > a:hover, #tam-custom-sidebar .nav > li:nth-child(7) > a:focus,#tam-custom-sidebar .nav > li:nth-child(12) > a:hover, #tam-custom-sidebar .nav > li:nth-child(12) > a:focus,#tam-custom-sidebar .nav > li:nth-child(17) > a:hover, #tam-custom-sidebar .nav > li:nth-child(17) > a:focus{
+	background:#43c83c;
+}
+#tam-custom-sidebar .nav > li:nth-child(3) > a:hover, #tam-custom-sidebar .nav > li:nth-child(3) > a:focus,#tam-custom-sidebar .nav > li:nth-child(8) > a:hover, #tam-custom-sidebar .nav > li:nth-child(8) > a:focus,#tam-custom-sidebar .nav > li:nth-child(13) > a:hover, #tam-custom-sidebar .nav > li:nth-child(13) > a:focus,#tam-custom-sidebar .nav > li:nth-child(18) > a:hover, #tam-custom-sidebar .nav > li:nth-child(18) > a:focus{
+	background:#f88529;
+}
+#tam-custom-sidebar .nav > li:nth-child(4) > a:hover, #tam-custom-sidebar .nav > li:nth-child(4) > a:focus,#tam-custom-sidebar .nav > li:nth-child(9) > a:hover, #tam-custom-sidebar .nav > li:nth-child(9) > a:focus,#tam-custom-sidebar .nav > li:nth-child(14) > a:hover, #tam-custom-sidebar .nav > li:nth-child(14) > a:focus,#tam-custom-sidebar .nav > li:nth-child(19) > a:hover, #tam-custom-sidebar .nav > li:nth-child(19) > a:focus{
+	background:#52b9e9;
+}
+#tam-custom-sidebar .nav > li:nth-child(5) > a:hover, #tam-custom-sidebar .nav > li:nth-child(5) > a:focus,#tam-custom-sidebar .nav > li:nth-child(10) > a:hover, #tam-custom-sidebar .nav > li:nth-child(10) > a:focus,#tam-custom-sidebar .nav > li:nth-child(15) > a:hover, #tam-custom-sidebar .nav > li:nth-child(15) > a:focus,#tam-custom-sidebar .nav > li:nth-child(20) > a:hover, #tam-custom-sidebar .nav > li:nth-child(20) > a:focus{
+	background:#fa3031;
+}
+
+
+/* ///////////////////////////////////// noticeboard ////////////////////////////////////////*/
+.tam-custom-noticeboard{
+	border:2px solid #FA6800;
+}
+.tam-custom-noticeboard .box-header{
+	background-color:#FA6800;
+	border-radius: 0;
+	text-align:center;
+}
+.tam-custom-noticeboard .box-header .title{
+	float:none;
+	font-weight:bold;
+	letter-spacing:2px;
+}
+.tam-custom-noticeboard .box-section{
+	border:none;
+}
+/*.tam-custom-noticeboard .news:nth-child(odd){
+	background-color:#ededed;
+}*/
+.tam-custom-noticeboard .news:hover{
+	background-color:#f3f4f8;
+}
+.tam-custom-noticeboard .avatar{
+	background-color:#1171a3 ;
+}
+.tam-custom-noticeboard .avatar i{
+	font-size:18px;
+}
+.tam-custom-noticeboard .news-time{
+	color:#fff;
+	background-color: #1171a3 ;
+    border-radius: 100px;
+    padding: 0 15px 5px;
+}
+
+
+/* ///////////////////////////////////// assignments ////////////////////////////////////////*/
+
+.tam-custom-assignments{
+	border:2px solid #1171a3;
+}
+.tam-custom-assignments .box-header{
+	background-color:#1171a3;
+	border-radius: 0;
+	text-align:center;
+}
+.tam-custom-assignments .box-header .title{
+	float:none;
+	font-weight:bold;
+	letter-spacing:2px;
+}
+.tam-custom-assignments .box-section{
+	border:none;
+}
+/*.tam-custom-assignments .news:nth-child(odd){
+	background-color:#ededed;
+}*/
+.tam-custom-assignments .news:hover{
+	background-color:#f3f4f8;
+}
+.tam-custom-assignments .avatar{
+	background-color:#FA6800 ;
+}
+.tam-custom-assignments .avatar i{
+	font-size:18px;
+}
+.tam-custom-assignments .news-time{
+	color:#fff;
+	background-color: #FA6800 ;
+    border-radius: 100px;
+    padding: 0 15px 5px;
+}

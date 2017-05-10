@@ -1,0 +1,2682 @@
+
+
+6<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+      <link rel="shortcut icon" href="http://localhost:8081/sms/template/images/favicon.ico" type="image/x-icon">
+      <link rel="icon" href="http://localhost:8081/sms/template/images/favicon.ico" type="image/x-icon">
+      <script type="text/javascript" src="http://localhost:8081/sms/template/install/jquery.min.js"></script>
+      <link rel="stylesheet" href="http://localhost:8081/sms/template/css/font.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800">
+      <link href="http://localhost:8081/sms/template/css/ekattor.css" media="screen" rel="stylesheet" type="text/css" />
+      <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
+      <link href="http://localhost:8081/sms/font-awesome-4.7.0/css/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css" />
+      <link href="http://localhost:8081/sms/template/css/bootstrap-tagsinput.css" media="screen" rel="stylesheet" type="text/css" />
+      <link href="http://localhost:8081/sms/template/css/tammanager.css" media="screen" rel="stylesheet" type="text/css" />
+      <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+      <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+      <script>
+         var urls = '{"base_url":"http:\/\/localhost:8081\/sms\/","backend_url":false,"assets":{"base":"http:\/\/localhost:8081\/sms\/template\/","js":"http:\/\/localhost:8081\/sms\/template\/js\/","css":"http:\/\/localhost:8081\/sms\/template\/css\/","img":"http:\/\/localhost:8081\/sms\/template\/"}}';
+      </script>
+      <link rel="stylesheet" href="http://localhost:8081/sms/template/css/font.css">
+      <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800">-->
+      <link href="http://localhost:8081/sms/template/css/ekattor.css" media="screen" rel="stylesheet" type="text/css" />
+      <link href="http://localhost:8081/sms/template/css/bootstrap-tagsinput.css" media="screen" rel="stylesheet" type="text/css" />
+      <link href="http://localhost:8081/sms/template/css/tammanager.css" media="screen" rel="stylesheet" type="text/css" />
+      <!--[if lt IE 9]>
+      <script src="http://localhost:8081/sms/template/js/html5shiv.js" type="text/javascript"></script>
+      <script src="http://localhost:8081/sms/template/js/excanvas.js" type="text/javascript"></script>
+      <![endif]-->
+      <script src="http://localhost:8081/sms/template/js/ekattor.js" type="text/javascript"></script>
+      <script src="http://localhost:8081/sms/template/js/bootstrap-tagsinput.js" type="text/javascript"></script>
+      <title>View Student | SMS</title>
+   </head>
+   <body>
+      <div id="main_body">
+         <style>
+            @import url(http://fonts.googleapis.com/css?family=Black+Ops+One);
+            #time {
+            color:#fa6800;
+            font-family: 'Black Ops One', cursive;
+            font-size: 25px;
+            letter-spacing:2px;
+            //padding:10px 0 0 10px;
+            }
+         </style>
+         <div id="custom-tam-overlay">
+            <img src="http://localhost:8081/sms/template/images/ajax-loader.gif" alt="" />
+         </div>
+         <div class="navbar navbar-top navbar-inverse">
+            <div class="navbar-inner" id="tam-custom-navbar-top">
+               <div class="container-fluid">
+                  <a class="brand" href="http://localhost:8081/sms/">International School			</a>
+                  <ul class="nav">
+                     <li id="time"></li>
+                  </ul>
+                  <!-- the new toggle buttons -->
+                  <ul class="nav pull-right">
+                     <li class="toggle-primary-sidebar hidden-desktop" data-toggle="collapse" data-target=".nav-collapse-primary"><button type="button" class="btn btn-navbar"><i class="icon-th-list"></i></button></li>
+                     <li class="hidden-desktop" data-toggle="collapse" data-target=".nav-collapse-top"><button type="button" class="btn btn-navbar"><i class="icon-align-justify"></i></button></li>
+                  </ul>
+                  <div class="nav-collapse nav-collapse-top collapse" id="custom-tam-profile-menu">
+                     <ul class="nav pull-right">
+                        <li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> Hi, Admin  <b class="caret"></b></a>
+                           <!-- Account Selector -->
+                           <ul class="dropdown-menu">
+                              <!--<li class="with-image">
+                                 <div class="avatar">
+                                     <img src="template/images/icons_big/.png" class="avatar-medium"/>
+                                 </div>
+                                 <span></span>
+                                 </li>
+                                 <li class="divider"></li>-->
+                              <li><a href="http://localhost:8081/sms/index.php?admin/manage_profile">
+                                 <i class="icon-user"></i><span>Profile</span></a>
+                              </li>
+                              <li><a href="http://localhost:8081/sms/index.php?admin/manage_profile">
+                                 <i class="icon-lock"></i><span>Change Password</span></a>
+                              </li>
+                              <li><a href="http://localhost:8081/sms/index.php?login/logout">
+                                 <i class="icon-off"></i><span>Logout</span></a>
+                              </li>
+                           </ul>
+                           <!-- Account Selector -->
+                        </li>
+                     </ul>
+                     <!--<ul class="nav pull-right">
+                        <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Select Language <b class="caret"></b></a>
+                        <!-- Language Selector -->
+                     <!-- <ul class="dropdown-menu">
+                        <li>
+                        <a href="http://localhost:8081/sms/index.php?multilanguage/select_language/english">
+                        english                                                                                                <i class="icon-ok"></i>
+                                            </a>
+                        </li>
+                        </ul>
+                        Language Selector 
+                        </li>
+                        </ul>-->
+                     <ul class="nav pull-right">
+                        <li class="dropdown">
+                           <a href="http://localhost:8081/sms/index.php?admin/calendar/calendar" ><i class="icon-calendar"></i> Calendar
+                           </a>
+                        </li>
+                        <li class="dropdown dropdown-big">
+                           <a class="dropdown-toggle" href="#" data-toggle="dropdown"> <i class="icon-list"></i> Events </a>
+                           <ul class="dropdown-menu">
+                              <li>
+                                 <div style="color:#000;padding:5px;"><i class="icon-list"></i>No Upcoming Events</div>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
+                     <ul class="nav pull-right">
+                        <li class="dropdown">
+                           <a href="http://localhost:8081/sms/index.php?admin/mailsms" ><i class="icon-envelope"></i> </a>
+                        </li>
+                     </ul>
+                     <ul class="nav pull-right">
+                        <li class="dropdown">
+                           <a href="http://localhost:8081/sms/index.php?admin/tasks" ><i class="icon-bell"></i><span class="badge badge-important">
+                           <span id="ctl00_lbl_unread">0</span>
+                           </span> </a>
+                        </li>
+                     </ul>
+                     <ul class="nav pull-right">
+                        <!--<li class="dropdown">
+                           <a href="#" ><i class="icon-user"></i>Admin Panel </a>
+                           </li>-->
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--<div id="custom-tam-suport-bck">
+            <i class="icon-question-sign"></i> Submit Ticket
+            </div>-->
+         <script>
+            $('#custom-tam-suport-bck').on('click',function(e){
+            	 e.preventDefault();
+            	 
+            	 $('#custom-tam-model-ticket').modal('show');
+            	
+            });
+            
+            	startTime();
+                    function startTime()
+                    {
+                        var today=new Date();
+                        var h=today.getHours();
+                        var m=today.getMinutes();
+                        var s=today.getSeconds();
+                        // add a zero in front of numbers<10
+                        m=checkTime(m);
+                        s=checkTime(s);
+                        document.getElementById('time').innerHTML=h+":"+m+":"+s;
+                        t=setTimeout(function(){startTime()},500);
+                    }
+            
+                    function checkTime(i)
+                    {
+                        if (i<10)
+                        {
+                            i="0" + i;
+                        }
+                        return i;
+                    }
+                
+         </script>        <!--<div class="sidebar-background">
+            <!--<div class="sidebar-background">
+            	<div class="primary-sidebar-background">
+            	</div>
+            </div>-->
+         <div class="primary-sidebar" id="tam-custom-sidebar">
+            <!-- Main nav -->
+            <div id="tam-custom-logo">
+               <a href="http://localhost:8081/sms/">
+               <img src="http://localhost:8081/sms/uploads/logo.png"  style="max-height:100px; max-width:100px;"/>
+               </a>
+            </div>
+            <ul class="nav nav-collapse collapse nav-collapse-primary">
+               <!------dashboard----->
+               <li class="">
+                  <span class="glow"></span>
+                  <a href="http://localhost:8081/sms/index.php?admin/dashboard" rel="tooltip" data-placement="right" 
+                     data-original-title="Dashboard Help">
+                  <i class="icon-user icon-plus"></i>  
+                  <span>Dashboard</span>
+                  </a>
+               </li>
+               <!------sms--------->
+               <li class="dark-nav ">
+                  <span class="glow"></span>
+                  <a class="accordion-toggle  " data-toggle="collapse" href="#communication_submenu" rel="tooltip" data-placement="right" 
+                     data-original-title="Communication Help">
+                  <i class="icon-user icon-plus"></i>  
+                  <span>Communication<i class="icon-caret-down"></i></span>
+                  </a>
+                  <ul id="communication_submenu" class="collapse ">
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/mailsms">
+                        <i class="icon-user icon-plus"></i>                  		
+                        Mail / SMS                  </a>
+                     </li>
+                     <!--<li class="">
+                        <span class="glow"></span>
+                                     <a href="index.php?admin/sms_view">
+                                     		<i class="icon-user icon-plus"></i>                  		
+                                       	                  </a>
+                                   </li>-->
+                     <!--<li class="">
+                        <a href="http://localhost:8081/sms/index.php?admin/sms_template_view">
+                            	<i class="icon-user icon-plus"></i> 
+                        Sms Template View                  </a>
+                        </li>
+                        <li class="">
+                        <a href="http://localhost:8081/sms/index.php?admin/sent_sms">
+                            	<i class="icon-user icon-plus"></i>                    	
+                        Sent Sms                  </a>
+                        </li>-->
+                     <!--<li class="">
+                        <span class="glow"></span>
+                                      <a href="index.php?admin/email">
+                                          	<i class="icon-user icon-plus"></i>                    	
+                        		                  </a>
+                                    </li>-->							
+                     <!------noticeboard----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/noticeboard" rel="tooltip" data-placement="right" 
+                           data-original-title="Noticeboard Help">
+                        <i class="icon-user icon-plus"></i>                             
+                        <span>School Noticeboard</span>
+                        </a>
+                     </li>
+                     <!------class noticeboard----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/classnoticeboard" rel="tooltip" data-placement="right" 
+                           data-original-title="Noticeboard Help">
+                        <i class="icon-user icon-plus"></i>                             
+                        <span>Class Wise Student Notices/staff Notices</span>
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="dark-nav active">
+                  <span class="glow"></span>
+                  <a class="accordion-toggle  " data-toggle="collapse" href="#admission_submenu" rel="tooltip" data-placement="right" 
+                     data-original-title="Admission Help">                
+                  <i class="icon-user icon-plus"></i>  
+                  <span>Admission<i class="icon-caret-down"></i></span>
+                  </a>
+                  <ul id="admission_submenu" class="collapse in">
+                     <!------student----->
+                     <li class="dark-nav active">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/student" rel="tooltip" data-placement="right" 
+                           data-original-title="Student Help">
+                        <i class="icon-user icon-plus"></i>                    
+                        <span>Student</span>
+                        </a>
+                     </li>
+                     <!------teacher----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/teacher" rel="tooltip" data-placement="right" 
+                           data-original-title="Teacher Help">
+                        <i class="icon-user icon-plus"></i>
+                        <span>Teacher</span>
+                        </a>
+                     </li>
+                     <!------staff----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/staff" rel="tooltip" data-placement="right" 
+                           data-original-title="Staff Help">
+                        <i class="icon-user icon-plus"></i>                    
+                        <span>Non Teaching Staff</span>
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+               <!------parent----->
+               <!--		<li class="">
+                  <span class="glow"></span>
+                  	<a href="http://localhost:8081/sms/index.php?admin/parent" rel="tooltip" data-placement="right" 
+                               	data-original-title="Teacher Help">
+                  		<i class="icon-user icon-1x"></i>
+                                   <img src="http://localhost:8081/sms/template/images/icons/parent.png" />
+                  		<span>Parent</span>
+                  	</a>
+                  </li>-->
+               <li class="dark-nav ">
+                  <span class="glow"></span>
+                  <a class="accordion-toggle  " data-toggle="collapse" href="#academics_submenu" rel="tooltip" data-placement="right" 
+                     data-original-title="Academics Help">
+                  <i class="icon-user icon-plus"></i>  
+                  <span>Academics<i class="icon-caret-down"></i></span>
+                  </a>
+                  <ul id="academics_submenu" class="collapse ">
+                     <!------classes----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/academicyear" rel="tooltip" data-placement="right" 
+                           data-original-title="Class Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Academic Session</span>
+                        </a>
+                     </li>
+                     <!------subject----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/subject" rel="tooltip" data-placement="right" 
+                           data-original-title="Subject Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Enter Subject</span>
+                        </a>
+                     </li>
+                     <!------classes----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/classes" rel="tooltip" data-placement="right" 
+                           data-original-title="Class Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Enter Class</span>
+                        </a>
+                     </li>
+                     <!------exam----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/exam" rel="tooltip" data-placement="right" 
+                           data-original-title="Exam Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Create Exam</span>
+                        </a>
+                     </li>
+                     <!------marks----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/marks" rel="tooltip" data-placement="right" 
+                           data-original-title="Marks Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Enter Marks</span>
+                        </a>
+                     </li>
+                     <!------grade----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/grade" rel="tooltip" data-placement="right" 
+                           data-original-title="Grade Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Exam Grade</span>
+                        </a>
+                     </li>
+                     <!------class routine----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/class_routine" rel="tooltip" data-placement="right" 
+                           data-original-title="Class Routine Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Class Routine</span>
+                        </a>
+                     </li>
+                     <!------departments----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/departments" rel="tooltip" data-placement="right" 
+                           data-original-title="Departments Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Manage Departments</span>
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+               <!-- ATTENDANCE NAVIGATION-->
+               <li class="dark-nav ">
+                  <span class="glow"></span>
+                  <a class="accordion-toggle  " data-toggle="collapse" href="#attendance_submenu" rel="tooltip" data-placement="right" 
+                     data-original-title="Attendance Help">
+                  <i class="icon-user icon-plus"></i>  
+                  <span>Attendance<i class="icon-caret-down"></i></span>
+                  </a>
+                  <ul id="attendance_submenu" class="collapse ">
+                     <!------daily_attendence----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/daily_attendence" rel="tooltip" data-placement="right" 
+                           data-original-title="Daily Attendence Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Student Daily Attendence</span>
+                        </a>
+                     </li>
+                     <!------Monthly Attendence----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/attendence" rel="tooltip" data-placement="right" 
+                           data-original-title="Attendence Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Student Monthly Attendence</span>
+                        </a>
+                     </li>
+                     <!------daily staffattendence----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/daily_staffattendence" rel="tooltip" data-placement="right" 
+                           data-original-title="Daily Staffattendence">
+                           <!--<i class="icon-money icon-1x"></i>-->
+                           <i class="icon-user icon-plus"></i>  
+                           <span>Staff Daily Staffattendence</span>
+                        </a>
+                     </li>
+                     <!------staffattendence----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/staffattendence" rel="tooltip" data-placement="right" 
+                           data-original-title="Staffattendence Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Staff Monthly Attendence</span>
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+               <!------Time Table----->
+               <li class="dark-nav ">
+                  <span class="glow"></span>
+                  <a class="accordion-toggle  " data-toggle="collapse" href="#tt_submenu" rel="tooltip" data-placement="right" 
+                     data-original-title="Time Table">
+                  <i class="icon-user icon-plus"></i>  
+                  <span>Time Table<i class="icon-caret-down"></i></span>
+                  </a>
+                  <ul id="tt_submenu" class="collapse ">
+                     <!------timetable----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/timetable_category/1" rel="tooltip" data-placement="right" 
+                           data-original-title="Timetable">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Timetable</span>
+                        </a>
+                     </li>
+                     <!------timetable category----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/timetable_category/2" rel="tooltip" data-placement="right" 
+                           data-original-title="Employee Category Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Timetable Category</span>
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+               <!------hr----->
+               <li class="dark-nav ">
+                  <span class="glow"></span>
+                  <a class="accordion-toggle  " data-toggle="collapse" href="#hr_submenu" rel="tooltip" data-placement="right" 
+                     data-original-title="Human Resources Help">
+                  <i class="icon-user icon-plus"></i>  
+                  <span>Human Resources<i class="icon-caret-down"></i></span>
+                  </a>
+                  <ul id="hr_submenu" class="collapse ">
+                     <!------employee category----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/employee_category" rel="tooltip" data-placement="right" 
+                           data-original-title="Employee Category Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Employee Category</span>
+                        </a>
+                     </li>
+                     <!------leavetypes----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/leavetypes" rel="tooltip" data-placement="right" 
+                           data-original-title="Leavetypes Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Leave Types</span>
+                        </a>
+                     </li>
+                     <!-- Leave Management-->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/leavemanagement" rel="tooltip" data-placement="right" 
+                           data-original-title="Leave Management Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Leave Management</span>
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="dark-nav ">
+                  <span class="glow"></span>
+                  <a class="accordion-toggle  " data-toggle="collapse" href="#payment_submenu" rel="tooltip" data-placement="right" 
+                     data-original-title="Payment Help">
+                  <i class="icon-user icon-plus"></i>  
+                  <span>Payment<i class="icon-caret-down"></i></span>
+                  </a>
+                  <ul id="payment_submenu" class="collapse ">
+                     <!------invoice----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/feecategories" rel="tooltip" data-placement="right" 
+                           data-original-title="Fee Categories Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Fee Categories</span>
+                        </a>
+                     </li>
+                     <!------Fees category----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/feeperiods" rel="tooltip" data-placement="right" 
+                           data-original-title="Fee Periods Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Fee Periods</span>
+                        </a>
+                     </li>
+                     <!------Class wise fees----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/feecollect" rel="tooltip" data-placement="right" 
+                           data-original-title="Fee Collect Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Fee Collect</span>
+                        </a>
+                     </li>
+                     <!------Student Payments----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/feereporting" rel="tooltip" data-placement="right" 
+                           data-original-title="Fee Reporting Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Fee Reporting</span>
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+               <!------Library------>
+               <li class="dark-nav ">
+                  <span class="glow"></span>
+                  <a class="accordion-toggle  " data-toggle="collapse" href="#library_submenu" rel="tooltip" data-placement="right" 
+                     data-original-title="Library Help">
+                  <i class="icon-user icon-plus"></i>  
+                  <span>Library<i class="icon-caret-down"></i></span>
+                  </a>
+                  <ul id="library_submenu" class="collapse ">
+                     <li class="">
+                        <a href="http://localhost:8081/sms/index.php?admin/book">
+                        <i class="icon-user icon-plus"></i>  
+                        Add Books                  </a>
+                     </li>
+                     <li class="">
+                        <a href="http://localhost:8081/sms/index.php?admin/book_cat">
+                        <i class="icon-user icon-plus"></i>  
+                        Books Category                  </a>
+                     </li>
+                  </ul>
+               </li>
+               <!------transport------>
+               <li class="dark-nav ">
+                  <span class="glow"></span>
+                  <a class="accordion-toggle  " data-toggle="collapse" href="#utilities_submenu" rel="tooltip" data-placement="right" 
+                     data-original-title="Utilities Help">
+                  <i class="icon-user icon-plus"></i>  
+                  <span>Utilities<i class="icon-caret-down"></i></span>
+                  </a>
+                  <ul id="utilities_submenu" class="collapse ">
+                     <!------transport----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/transport" rel="tooltip" data-placement="right" 
+                           data-original-title="Transport Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Transport</span>
+                        </a>
+                     </li>
+                     <!------dormitory----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/dormitory" rel="tooltip" data-placement="right" 
+                           data-original-title="Dormitory Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Dormitory</span>
+                        </a>
+                     </li>
+                     <!------Frontdesk Help----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/frontdeskenquiry" rel="tooltip" data-placement="right" 
+                           data-original-title="Dormitory Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Frontdesk Help</span>
+                        </a>
+                     </li>
+                     <!------tasks----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/tasks" rel="tooltip" data-placement="right" 
+                           data-original-title="Tasks Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Things Todo</span>
+                        </a>
+                     </li>
+                     <!------palcements----->
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/placements" rel="tooltip" data-placement="right" 
+                           data-original-title="Placements Help">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Placements</span>
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="dark-nav ">
+                  <span class="glow"></span>
+                  <a class="accordion-toggle  " data-toggle="collapse" href="#knowledge_submenu" rel="tooltip" data-placement="right" 
+                     data-original-title="Knowledge Help">
+                  <i class="icon-user icon-plus"></i>  
+                  <span>Knowledge<i class="icon-caret-down"></i></span>
+                  </a>
+                  <ul id="knowledge_submenu" class="collapse ">
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/previousquestionpapers" rel="tooltip" data-placement="right" 
+                           data-original-title="Previous Question Papers">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Previous Question Papers</span>
+                        </a>
+                     </li>
+                     <li class="">
+                        <span class="glow"></span>
+                        <a href="http://localhost:8081/sms/index.php?admin/onlinetest" rel="tooltip" data-placement="right" 
+                           data-original-title="Online Test">
+                        <i class="icon-user icon-plus"></i>  
+                        <span>Online Test</span>
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+               <!------system settings------>
+               <li class="dark-nav ">
+                  <span class="glow"></span>
+                  <a class="accordion-toggle  " data-toggle="collapse" href="#settings_submenu" rel="tooltip" data-placement="right" 
+                     data-original-title="Settings Help">
+                  <i class="icon-user icon-plus"></i>  
+                  <span>Settings<i class="icon-caret-down"></i></span>
+                  </a>
+                  <ul id="settings_submenu" class="collapse ">
+                     <li class="">
+                        <a href="http://localhost:8081/sms/index.php?admin/system_settings">
+                        <i class="icon-user icon-plus"></i>  
+                        System Settings                  </a>
+                     </li>
+                     <!-- <li class="">
+                        <a href="http://localhost:8081/sms/index.php?admin/manage_language">
+                            	<i class="icon-globe"></i>
+                          	<img src="http://localhost:8081/sms/template/images/icons/language.png" />
+                        Manage Language                  </a>
+                        </li>-->
+                     <li class="">
+                        <a href="http://localhost:8081/sms/index.php?admin/backup_restore">
+                        <i class="icon-user icon-plus"></i>  
+                        Backup Restore                  </a>
+                     </li>
+                  </ul>
+               </li>
+               <!------CCE------>
+               <li class="dark-nav ">
+                  <span class="glow"></span>
+                  <a class="accordion-toggle  " data-toggle="collapse" href="#cce_settings" rel="tooltip" data-placement="right" 
+                     data-original-title="Cce Help">
+                  <i class="icon-user icon-plus"></i>  
+                  <span>Cce Inputs<i class="icon-caret-down"></i></span>
+                  </a>
+                  <ul id="cce_settings" class="collapse ">
+                     <li class="">
+                        <a href="http://localhost:8081/sms/index.php?admin/cce_category">
+                        <i class="icon-user icon-plus"></i>  
+                        Category                  </a>
+                     </li>
+                     <li class="">
+                        <a href="http://localhost:8081/sms/index.php?admin/cce_skills">
+                        <i class="icon-user icon-plus"></i>  
+                        Skills                  </a>
+                     </li>
+                     <li class="">
+                        <a href="http://localhost:8081/sms/index.php?admin/cce_indicators">
+                        <i class="icon-user icon-plus"></i>  
+                        Indicators                  </a>
+                     </li>
+                     <li class="">
+                        <a href="http://localhost:8081/sms/index.php?admin/cce_assessment_term">
+                        <i class="icon-user icon-plus"></i>  
+                        Assessment Terms                  </a>
+                     </li>
+                     <li class="">
+                        <a href="http://localhost:8081/sms/index.php?admin/grade_skills_mapping">
+                        <i class="icon-user icon-plus"></i>  
+                        Grades Skill Mapping                  </a>
+                     </li>
+                     <li class="">
+                        <a href="http://localhost:8081/sms/index.php?admin/cce_assessment">
+                        <i class="icon-user icon-plus"></i>  
+                        Assessment                  </a>
+                     </li>
+                     <li class="">
+                        <a href="http://localhost:8081/sms/index.php?admin/cce_grade_sets">
+                        <i class="icon-user icon-plus"></i>  
+                        Grades                  </a>
+                     </li>
+                     <li class="">
+                        <a href="http://localhost:8081/sms/index.php?admin/cce_class_indicator">
+                        <i class="icon-user icon-plus"></i>  
+                        Class Indicator Relation                  </a>
+                     </li>
+                     <li class="">
+                        <a href="http://localhost:8081/sms/index.php?admin/backup_restore">
+                        <i class="icon-user icon-plus"></i>  
+                        Exam Scheme                  </a>
+                     </li>
+                  </ul>
+               </li>
+               <!------manage own profile--->
+               <!--<li class="">
+                  <span class="glow"></span>
+                  	<a href="index.php?admin/manage_profile" rel="tooltip" data-placement="right" 
+                               	data-original-title="">
+                  		<i class="icon-lock icon-1x"></i>
+                                   <img src="template/images/icons/profile.png" />
+                  		<span></span>
+                  	</a>
+                  </li>-->
+               <!------system settings------>
+            </ul>
+         </div>
+         <div class="main-content">
+            <div class="container-fluid" >
+               <div class="row-fluid">
+                  <div class="area-top clearfix">
+                     <div class="pull-left header">
+                        <h3 class="title">
+                           <i class="icon-pushpin"></i>
+                           View Student 
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!--------FLASH MESSAGES Nulled by vokey--->
+            <!---->
+            <div class="container-fluid padded">
+               <div class="box">
+                  <div class="box-header">
+                     <!------CONTROL TABS START------->
+                     <ul class="nav nav-tabs nav-tabs-left">
+                        <li  class="active" >
+                           <a href="#list" data-toggle="tab"><i class="icon-align-justify"></i> 
+                           Student List
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#add" data-toggle="tab"><i class="icon-plus"></i>
+                           Add Student
+                           </a>
+                        </li>
+                        <li >
+                           <a href="#upload" data-toggle="tab"><i class="icon-plus"></i>
+                           Upload
+                           </a>
+                        </li>
+                     </ul>
+                     <!------CONTROL TABS END------->
+                  </div>
+                  <div class="box-content">
+                     <div class="tab-content">
+                        <!----TABLE LISTING STARTS--->
+                        <div class="tab-pane " id="upload">
+                           <form action="http://localhost:8081/sms/index.php?/admin/student/do_upload" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+                              <table cellspacing="5" cellpadding="5" width="500" height="230"  style="border:1px solid #eee;margin: 0px auto;
+                                 margin-top: 25px;" align="center">
+                                 <tr style="">
+                                    <td  >
+                                       <span style="margin-left:50px;"> Change Class: </span>  
+                                    </td>
+                                    <td>
+                                       <select name="class_id"  style="margin-right:25px;" required="required">
+                                          <option value="">Select A Class</option>
+                                          <option value="5"
+                                             >
+                                             LKG A-
+                                          </option>
+                                          <option value="6"
+                                             selected>
+                                             LKG B-
+                                          </option>
+                                          <option value="7"
+                                             >
+                                             UKG- A-
+                                          </option>
+                                          <option value="8"
+                                             >
+                                             UKG- B-
+                                          </option>
+                                          <option value="9"
+                                             >
+                                             1st Std- A-
+                                          </option>
+                                          <option value="10"
+                                             >
+                                             1st Std- B-
+                                          </option>
+                                          <option value="11"
+                                             >
+                                             2nd Std - A-
+                                          </option>
+                                          <option value="12"
+                                             >
+                                             2nd Std- B-
+                                          </option>
+                                          <option value="13"
+                                             >
+                                             3rd Std- A-
+                                          </option>
+                                          <option value="14"
+                                             >
+                                             3rd Std- B-
+                                          </option>
+                                          <option value="15"
+                                             >
+                                             4th Std- A-
+                                          </option>
+                                          <option value="16"
+                                             >
+                                             4th Std- B-
+                                          </option>
+                                          <option value="17"
+                                             >
+                                             5th Std- A-
+                                          </option>
+                                          <option value="18"
+                                             >
+                                             5th Std- B-
+                                          </option>
+                                          <option value="19"
+                                             >
+                                             6th Std- A-
+                                          </option>
+                                          <option value="20"
+                                             >
+                                             6th Std- B-
+                                          </option>
+                                          <option value="21"
+                                             >
+                                             7th Std- A-
+                                          </option>
+                                          <option value="22"
+                                             >
+                                             7th Std- B-
+                                          </option>
+                                          <option value="23"
+                                             >
+                                             8th Std- A-
+                                          </option>
+                                          <option value="24"
+                                             >
+                                             8th Std- B-
+                                          </option>
+                                          <option value="25"
+                                             >
+                                             9th Std- A-
+                                          </option>
+                                          <option value="26"
+                                             >
+                                             9th Std- B-
+                                          </option>
+                                          <option value="27"
+                                             >
+                                             10th Std- A-
+                                          </option>
+                                          <option value="28"
+                                             >
+                                             10th Std- B-
+                                          </option>
+                                       </select>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <label style="width:250px; margin-left:50px;">Upload your file: </label>
+                                    </td>
+                                    <td>
+                                       <input type="file" required="required" style="width:250px;margin-right:25px;" name="excelfile" id="excelfile" >
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td colspan="2" align="center"> <a href="example.xls"><button class="btn btn-green btn-small"  type="button" style="margin-right:25px;height:35px;">Download Format</button></a><input type="submit" class="btn btn-green btn-small"  name="isupload" value="upload" style="width:100px; height:35px;"></td>
+                                 </tr>
+                              </table>
+                           </form>
+                        </div>
+                        <div class="tab-pane active" id="list">
+                           <center class="custom-tam-cng-sel-block">
+                              <span> Change Class </span>
+                              <select name="class_id" onchange="window.location='http://localhost:8081/sms/index.php?admin/student/'+this.value">
+                                 <option value="">Select A  Class</option>
+                                 <option value="5"
+                                    >
+                                    LKG A-
+                                 </option>
+                                 <option value="6"
+                                    selected>
+                                    LKG B-
+                                 </option>
+                                 <option value="7"
+                                    >
+                                    UKG- A-
+                                 </option>
+                                 <option value="8"
+                                    >
+                                    UKG- B-
+                                 </option>
+                                 <option value="9"
+                                    >
+                                    1st Std- A-
+                                 </option>
+                                 <option value="10"
+                                    >
+                                    1st Std- B-
+                                 </option>
+                                 <option value="11"
+                                    >
+                                    2nd Std - A-
+                                 </option>
+                                 <option value="12"
+                                    >
+                                    2nd Std- B-
+                                 </option>
+                                 <option value="13"
+                                    >
+                                    3rd Std- A-
+                                 </option>
+                                 <option value="14"
+                                    >
+                                    3rd Std- B-
+                                 </option>
+                                 <option value="15"
+                                    >
+                                    4th Std- A-
+                                 </option>
+                                 <option value="16"
+                                    >
+                                    4th Std- B-
+                                 </option>
+                                 <option value="17"
+                                    >
+                                    5th Std- A-
+                                 </option>
+                                 <option value="18"
+                                    >
+                                    5th Std- B-
+                                 </option>
+                                 <option value="19"
+                                    >
+                                    6th Std- A-
+                                 </option>
+                                 <option value="20"
+                                    >
+                                    6th Std- B-
+                                 </option>
+                                 <option value="21"
+                                    >
+                                    7th Std- A-
+                                 </option>
+                                 <option value="22"
+                                    >
+                                    7th Std- B-
+                                 </option>
+                                 <option value="23"
+                                    >
+                                    8th Std- A-
+                                 </option>
+                                 <option value="24"
+                                    >
+                                    8th Std- B-
+                                 </option>
+                                 <option value="25"
+                                    >
+                                    9th Std- A-
+                                 </option>
+                                 <option value="26"
+                                    >
+                                    9th Std- B-
+                                 </option>
+                                 <option value="27"
+                                    >
+                                    10th Std- A-
+                                 </option>
+                                 <option value="28"
+                                    >
+                                    10th Std- B-
+                                 </option>
+                              </select>
+                              <!--<div class="action-nav-normal">
+                                 <div class=" action-nav-button" style="width:300px;">
+                                 
+                                     <a href="#" title="Users">
+                                 
+                                         <img src="template/images/icons/user.png" />
+                                 
+                                         <span>Total  students</span>
+                                 
+                                     </a>
+                                 
+                                 </div>
+                                 
+                                 </div>-->
+                           </center>
+                           <form action="http://localhost:8081/sms/index.php?/admin/student/do_upload" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+                              <div>
+                                 <table style="border:1px solid #eeeeee;width:1118px;" align="center" class="custom-table-class">
+                                    <tr style="background:#5CA6CC; height:40px;color:#fff; font-size:15px; font-weight:bold;">
+                                       <td align="center">
+                                          Bulk Actions
+                                       </td>
+                                    </tr>
+                                    <tr style="height:55px;">
+                                       <td>
+                                          <table style="width:500px; float:left">
+                                             <tr>
+                                                <td valign="middle">Promote to:</td>
+                                                <td valign="middle">
+                                                   <select name="promote_class_id" >
+                                                      <option value="">Select A Class</option>
+                                                      <option value="5"
+                                                         >
+                                                         LKG A-
+                                                      </option>
+                                                      <option value="6"
+                                                         >
+                                                         LKG B-
+                                                      </option>
+                                                      <option value="7"
+                                                         >
+                                                         UKG- A-
+                                                      </option>
+                                                      <option value="8"
+                                                         >
+                                                         UKG- B-
+                                                      </option>
+                                                      <option value="9"
+                                                         >
+                                                         1st Std- A-
+                                                      </option>
+                                                      <option value="10"
+                                                         >
+                                                         1st Std- B-
+                                                      </option>
+                                                      <option value="11"
+                                                         >
+                                                         2nd Std - A-
+                                                      </option>
+                                                      <option value="12"
+                                                         >
+                                                         2nd Std- B-
+                                                      </option>
+                                                      <option value="13"
+                                                         >
+                                                         3rd Std- A-
+                                                      </option>
+                                                      <option value="14"
+                                                         >
+                                                         3rd Std- B-
+                                                      </option>
+                                                      <option value="15"
+                                                         >
+                                                         4th Std- A-
+                                                      </option>
+                                                      <option value="16"
+                                                         >
+                                                         4th Std- B-
+                                                      </option>
+                                                      <option value="17"
+                                                         >
+                                                         5th Std- A-
+                                                      </option>
+                                                      <option value="18"
+                                                         >
+                                                         5th Std- B-
+                                                      </option>
+                                                      <option value="19"
+                                                         >
+                                                         6th Std- A-
+                                                      </option>
+                                                      <option value="20"
+                                                         >
+                                                         6th Std- B-
+                                                      </option>
+                                                      <option value="21"
+                                                         >
+                                                         7th Std- A-
+                                                      </option>
+                                                      <option value="22"
+                                                         >
+                                                         7th Std- B-
+                                                      </option>
+                                                      <option value="23"
+                                                         >
+                                                         8th Std- A-
+                                                      </option>
+                                                      <option value="24"
+                                                         >
+                                                         8th Std- B-
+                                                      </option>
+                                                      <option value="25"
+                                                         >
+                                                         9th Std- A-
+                                                      </option>
+                                                      <option value="26"
+                                                         >
+                                                         9th Std- B-
+                                                      </option>
+                                                      <option value="27"
+                                                         >
+                                                         10th Std- A-
+                                                      </option>
+                                                      <option value="28"
+                                                         >
+                                                         10th Std- B-
+                                                      </option>
+                                                   </select>
+                                                </td>
+                                                <td valign="top"><input class="btn btn-green btn-small" type="submit" value="Bulk Promote" name="bulk-promote">
+                                                   <input type="text" value="2" name="selectCount">
+                                                   <input type="text" value="6" name="p_class"  />
+                                                </td>
+                                             </tr>
+                                          </table>
+                                          <table style="width:500px;float:right" >
+                                             <tr>
+                                                <td>Select Exam</td>
+                                                <td>
+                                                   <select name="exam_id" class=""  style="float:left;">
+                                                      <option value="">Select An Exam</option>
+                                                      <option value="1"
+                                                         >
+                                                         Class UNIT-1
+                                                      </option>
+                                                      <option value="2"
+                                                         >
+                                                         Class UNIT - 2
+                                                      </option>
+                                                   </select>
+                                                </td>
+                                                <td valign="top"><input class="btn btn-green btn-small" type="submit" value="Bulk Email" name="bulk-email"></td>
+                                                <td valign="top"><input class="btn btn-green btn-small" type="submit" value="Bulk SMS" name="bulk-sms"></td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <div class="box">
+                                 <div class="box-content">
+                                    <div id="dataTables">
+                                       <table cellpadding="0" cellspacing="0" border="0" class="responsive" id="teacher_dtable">
+                                          <thead>
+                                             <tr>
+                                                <th class="check_box">
+                                                   <div><input type="checkbox" name="select_all" class="select_all" value="2" id="select_all"></div>
+                                                </th>
+                                                <th style="width:62px;">
+                                                   <div style="width:62px;" >Roll</div>
+                                                </th>
+                                                <th>
+                                                   <div>Photo</div>
+                                                </th>
+                                                <th>
+                                                   <div>Student Name</div>
+                                                </th>
+                                                <th>
+                                                   <div style="width:170px;">Address</div>
+                                                </th>
+                                                <!--<th><div style="width:160px;"></div></th>-->
+                                                <th>
+                                                   <div>Options</div>
+                                                </th>
+                                             </tr>
+                                          </thead>
+                                          <tbody>
+                                             <tr>
+                                                <td>
+                                                   <div><input type="checkbox" name="custom-student0" class="roll_sel" id="roll_sel" value="11"></div>
+                                                </td>
+                                                <td>1</td>
+                                                <td>
+                                                   <div><img src="http://localhost:8081/sms/uploads/student_image/11.jpg" class="avatar-medium" /></div>
+                                                </td>
+                                                <td>Rajesh K</td>
+                                                <td style="width:170px;">---</td>
+                                                <!--<td ><div style="width:160px;"></div></td>-->
+                                                <td align="center">
+                                                   <div class="custom-tam-table-btns">
+                                                      <a data-toggle="modal" href="javascript:;" class="btn btn-lightblue btn-small custom-tam-indsudsms" data-studentid="11" data-stype="sms"><i class="icon-mobile-phone"></i> SMS </a>
+                                                      <a class="btn btn-green btn-small" onclick="modal('student_promote',11,6);document.getElementById('hid_btn').style.display = 'none'" href="#modal-form" data-toggle="modal">
+                                                      <i class="icon-user"></i> Promote
+                                                      </a>
+                                                      <a  data-toggle="modal" href="#modal-form" onclick="modal('student_profile',11);document.getElementById('hid_btn').style.display = 'inline'" class="btn btn-lightblue btn-small">
+                                                      <i class="icon-user"></i> Profile                                                                        </a>
+                                                      <a  data-toggle="modal" href="#modal-form" onclick="modal('edit_student',11,6);document.getElementById('hid_btn').style.display = 'inline'" class="btn btn-red btn-small">
+                                                      <i class="icon-wrench"></i> Edit                                                                        </a>
+                                                   </div>
+                                                   <div class="custom-tam-table-btns">
+                                                      <a  data-toggle="modal" href="javascript:;" class="btn btn-lightblue btn-small custom-tam-indsudsms" data-studentid="11" data-stype="mail"><i class="icon-envelope-alt"></i> Mail</a>
+                                                      <a  data-toggle="modal" href="#modal-form" onclick="modal('student_id_card',11);document.getElementById('hid_btn').style.display = 'inline'" class="btn btn-green btn-small">
+                                                      <i class="icon-credit-card"></i> Id Card                                                                        </a>
+                                                      <a  data-toggle="modal" href="#modal-form" onclick="modal('student_academic_result',11);document.getElementById('hid_btn').style.display = 'inline'" class="btn btn-lightblue btn-small">
+                                                      <i class="icon-file-alt"></i> Marksheet                                                                        </a>
+                                                      <a  data-toggle="modal" href="#modal-delete" onclick="modal_delete('http://localhost:8081/sms/index.php?admin/student/6/delete/11')" class="btn btn-red btn-small">
+                                                      <i class="icon-trash"></i> Delete                                                                        </a>
+                                                   </div>
+                                                   <!--<a href="http://localhost:8081/sms/index.php?admin/student/6/personal_profile/11"
+                                                      class="btn btn-gray">
+                                                      
+                                                         <i class="icon-wrench"></i> Personal Profile
+                                                      </a>
+                                                      
+                                                      <a href="http://localhost:8081/sms/index.php?admin/student/6/academic_result/11"
+                                                      
+                                                      class="btn btn-gray">
+                                                      
+                                                         <i class="icon-wrench"></i> Academic Result
+                                                      </a>
+                                                      
+                                                      <a href="http://localhost:8081/sms/index.php?admin/student/6/edit/11"
+                                                      
+                                                      class="btn btn-gray">
+                                                      
+                                                         <i class="icon-wrench"></i> Edit
+                                                      </a>
+                                                      
+                                                      <a href="http://localhost:8081/sms/index.php?admin/student/6/delete/11" onclick="return confirm('delete?')"
+                                                      
+                                                      class="btn btn-red">
+                                                      
+                                                         <i class="icon-trash"></i> Delete
+                                                      </a>-->
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>
+                                                   <div><input type="checkbox" name="custom-student1" class="roll_sel" id="roll_sel" value="12"></div>
+                                                </td>
+                                                <td>2</td>
+                                                <td>
+                                                   <div><img src="http://localhost:8081/sms/uploads/student_image/12.jpg" class="avatar-medium" /></div>
+                                                </td>
+                                                <td>murthy vv</td>
+                                                <td style="width:170px;">--</td>
+                                                <!--<td ><div style="width:160px;"></div></td>-->
+                                                <td align="center">
+                                                   <div class="custom-tam-table-btns">
+                                                      <a data-toggle="modal" href="javascript:;" class="btn btn-lightblue btn-small custom-tam-indsudsms" data-studentid="12" data-stype="sms"><i class="icon-mobile-phone"></i> SMS </a>
+                                                      <a class="btn btn-green btn-small" onclick="modal('student_promote',12,6);document.getElementById('hid_btn').style.display = 'none'" href="#modal-form" data-toggle="modal">
+                                                      <i class="icon-user"></i> Promote
+                                                      </a>
+                                                      <a  data-toggle="modal" href="#modal-form" onclick="modal('student_profile',12);document.getElementById('hid_btn').style.display = 'inline'" class="btn btn-lightblue btn-small">
+                                                      <i class="icon-user"></i> Profile                                                                        </a>
+                                                      <a  data-toggle="modal" href="#modal-form" onclick="modal('edit_student',12,6);document.getElementById('hid_btn').style.display = 'inline'" class="btn btn-red btn-small">
+                                                      <i class="icon-wrench"></i> Edit                                                                        </a>
+                                                   </div>
+                                                   <div class="custom-tam-table-btns">
+                                                      <a  data-toggle="modal" href="javascript:;" class="btn btn-lightblue btn-small custom-tam-indsudsms" data-studentid="12" data-stype="mail"><i class="icon-envelope-alt"></i> Mail</a>
+                                                      <a  data-toggle="modal" href="#modal-form" onclick="modal('student_id_card',12);document.getElementById('hid_btn').style.display = 'inline'" class="btn btn-green btn-small">
+                                                      <i class="icon-credit-card"></i> Id Card                                                                        </a>
+                                                      <a  data-toggle="modal" href="#modal-form" onclick="modal('student_academic_result',12);document.getElementById('hid_btn').style.display = 'inline'" class="btn btn-lightblue btn-small">
+                                                      <i class="icon-file-alt"></i> Marksheet                                                                        </a>
+                                                      <a  data-toggle="modal" href="#modal-delete" onclick="modal_delete('http://localhost:8081/sms/index.php?admin/student/6/delete/12')" class="btn btn-red btn-small">
+                                                      <i class="icon-trash"></i> Delete                                                                        </a>
+                                                   </div>
+                                                   <!--<a href="http://localhost:8081/sms/index.php?admin/student/6/personal_profile/12"
+                                                      class="btn btn-gray">
+                                                      
+                                                         <i class="icon-wrench"></i> Personal Profile
+                                                      </a>
+                                                      
+                                                      <a href="http://localhost:8081/sms/index.php?admin/student/6/academic_result/12"
+                                                      
+                                                      class="btn btn-gray">
+                                                      
+                                                         <i class="icon-wrench"></i> Academic Result
+                                                      </a>
+                                                      
+                                                      <a href="http://localhost:8081/sms/index.php?admin/student/6/edit/12"
+                                                      
+                                                      class="btn btn-gray">
+                                                      
+                                                         <i class="icon-wrench"></i> Edit
+                                                      </a>
+                                                      
+                                                      <a href="http://localhost:8081/sms/index.php?admin/student/6/delete/12" onclick="return confirm('delete?')"
+                                                      
+                                                      class="btn btn-red">
+                                                      
+                                                         <i class="icon-trash"></i> Delete
+                                                      </a>-->
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </div>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                        <!----TABLE LISTING ENDS--->
+                        <!----CREATION FORM STARTS---->
+                        <div class="tab-pane box" id="add" style="padding: 5px">
+                           <div class="box-content">
+                              <form action="http://localhost:8081/sms/index.php?/admin/student/create" method="post" accept-charset="utf-8" class="form-horizontal validatable" enctype="multipart/form-data">
+                                 <div class="padded">
+                                    <div class="control-group">
+                                       <label class="control-label">Class</label>
+                                       <div class="controls">
+                                          <select name="class_id" id="student_class_id" class="uniform" style="width:100%;">
+                                             <option value="">-- Select Class --</option>
+                                             <option value="5">
+                                                LKG A-
+                                             </option>
+                                             <option value="6">
+                                                LKG B-
+                                             </option>
+                                             <option value="7">
+                                                UKG- A-
+                                             </option>
+                                             <option value="8">
+                                                UKG- B-
+                                             </option>
+                                             <option value="9">
+                                                1st Std- A-
+                                             </option>
+                                             <option value="10">
+                                                1st Std- B-
+                                             </option>
+                                             <option value="11">
+                                                2nd Std - A-
+                                             </option>
+                                             <option value="12">
+                                                2nd Std- B-
+                                             </option>
+                                             <option value="13">
+                                                3rd Std- A-
+                                             </option>
+                                             <option value="14">
+                                                3rd Std- B-
+                                             </option>
+                                             <option value="15">
+                                                4th Std- A-
+                                             </option>
+                                             <option value="16">
+                                                4th Std- B-
+                                             </option>
+                                             <option value="17">
+                                                5th Std- A-
+                                             </option>
+                                             <option value="18">
+                                                5th Std- B-
+                                             </option>
+                                             <option value="19">
+                                                6th Std- A-
+                                             </option>
+                                             <option value="20">
+                                                6th Std- B-
+                                             </option>
+                                             <option value="21">
+                                                7th Std- A-
+                                             </option>
+                                             <option value="22">
+                                                7th Std- B-
+                                             </option>
+                                             <option value="23">
+                                                8th Std- A-
+                                             </option>
+                                             <option value="24">
+                                                8th Std- B-
+                                             </option>
+                                             <option value="25">
+                                                9th Std- A-
+                                             </option>
+                                             <option value="26">
+                                                9th Std- B-
+                                             </option>
+                                             <option value="27">
+                                                10th Std- A-
+                                             </option>
+                                             <option value="28">
+                                                10th Std- B-
+                                             </option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                    <div class="control-group">
+                                       <label class="control-label">Academic Year</label>
+                                       <div class="controls">
+                                          <select class="uniform validate[required]" name="student_academicyear_id">
+                                             <option value="">&nbsp;&nbsp;&nbsp;-- Academic Year --</option>
+                                             <option value="1">2011 - 2012</option>
+                                             <option value="2">2014 - 2015</option>
+                                             <option value="4">2012 - 2013</option>
+                                             <option value="6">2010 -2011</option>
+                                             <option value="11">2015 - 2016</option>
+                                             <option value="12">2016 - 2017</option>
+                                             <option value="13">2017 - 2018</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                    <div class="control-group">
+                                       <label class="control-label">Admission Number</label>
+                                       <div class="controls">
+                                          <input type="text" class="validate[required]" name="admission_number" id="admission_number" />
+                                          <span id="val_admission_number_img"></span>
+                                       </div>
+                                    </div>
+                                    <div class="control-group">
+                                       <label class="control-label">Roll</label>
+                                       <div class="controls">
+                                          <input type="text" class="validate[required]" name="roll" id="student_roll_val"/>
+                                          <span id="val_roll_img"></span>
+                                       </div>
+                                    </div>
+                                    <div class="control-group">
+                                       <label class="control-label">Name</label>
+                                       <div class="controls">
+                                          <input type="text" class="validate[required]" name="firstname" />
+                                          <input type="text" class="validate[required]" name="lastname" />
+                                       </div>
+                                    </div>
+                                    <input type="hidden" name="class_id" value="6" />
+                                    <div class="control-group">
+                                       <label class="control-label">Gender</label>
+                                       <div class="controls">
+                                          <select name="sex" class="uniform" style="width:100%;">
+                                             <option value="male">Male</option>
+                                             <option value="female">Female</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                    <div class="control-group">
+                                       <label class="control-label">Date Of Birth</label>
+                                       <div class="controls">
+                                          <!-- <input type="text" class="datepicker fill-up validate[required]" name="birthday" />-->
+                                          <select name="birth_day" id="birth_day"  style="width:80px;" class="validate[required] uniform">
+                                             <option value="">Day</option>
+                                             <option value="01">
+                                                01                                    
+                                             </option>
+                                             <option value="02">
+                                                02                                    
+                                             </option>
+                                             <option value="03">
+                                                03                                    
+                                             </option>
+                                             <option value="04">
+                                                04                                    
+                                             </option>
+                                             <option value="05">
+                                                05                                    
+                                             </option>
+                                             <option value="06">
+                                                06                                    
+                                             </option>
+                                             <option value="07">
+                                                07                                    
+                                             </option>
+                                             <option value="08">
+                                                08                                    
+                                             </option>
+                                             <option value="09">
+                                                09                                    
+                                             </option>
+                                             <option value="10">
+                                                10                                    
+                                             </option>
+                                             <option value="11">
+                                                11                                    
+                                             </option>
+                                             <option value="12">
+                                                12                                    
+                                             </option>
+                                             <option value="13">
+                                                13                                    
+                                             </option>
+                                             <option value="14">
+                                                14                                    
+                                             </option>
+                                             <option value="15">
+                                                15                                    
+                                             </option>
+                                             <option value="16">
+                                                16                                    
+                                             </option>
+                                             <option value="17">
+                                                17                                    
+                                             </option>
+                                             <option value="18">
+                                                18                                    
+                                             </option>
+                                             <option value="19">
+                                                19                                    
+                                             </option>
+                                             <option value="20">
+                                                20                                    
+                                             </option>
+                                             <option value="21">
+                                                21                                    
+                                             </option>
+                                             <option value="22">
+                                                22                                    
+                                             </option>
+                                             <option value="23">
+                                                23                                    
+                                             </option>
+                                             <option value="24">
+                                                24                                    
+                                             </option>
+                                             <option value="25">
+                                                25                                    
+                                             </option>
+                                             <option value="26">
+                                                26                                    
+                                             </option>
+                                             <option value="27">
+                                                27                                    
+                                             </option>
+                                             <option value="28">
+                                                28                                    
+                                             </option>
+                                             <option value="29">
+                                                29                                    
+                                             </option>
+                                             <option value="30">
+                                                30                                    
+                                             </option>
+                                             <option value="31">
+                                                31                                    
+                                             </option>
+                                          </select>
+                                          <select name="birth_month" id="birth_month"  style="width:100px;" class="validate[required] uniform">
+                                             <option value="">Month</option>
+                                             <option value="01">
+                                                Jan (01)                                    
+                                             </option>
+                                             <option value="02">
+                                                Feb (02)                                    
+                                             </option>
+                                             <option value="03">
+                                                Mar (03)                                    
+                                             </option>
+                                             <option value="04">
+                                                Apr (04)                                    
+                                             </option>
+                                             <option value="05">
+                                                May (05)                                    
+                                             </option>
+                                             <option value="06">
+                                                Jun (06)                                    
+                                             </option>
+                                             <option value="07">
+                                                Jul (07)                                    
+                                             </option>
+                                             <option value="08">
+                                                Aug (08)                                    
+                                             </option>
+                                             <option value="09">
+                                                Sep (09)                                    
+                                             </option>
+                                             <option value="10">
+                                                Oct (10)                                    
+                                             </option>
+                                             <option value="11">
+                                                Nov (11)                                    
+                                             </option>
+                                             <option value="12">
+                                                Dec (12)                                    
+                                             </option>
+                                          </select>
+                                          <select name="birth_year" id="birth_year" style="width:80px;" class="validate[required] uniform">
+                                             <option value="">Year</option>
+                                             <option value="1950">
+                                                1950                                    
+                                             </option>
+                                             <option value="1951">
+                                                1951                                    
+                                             </option>
+                                             <option value="1952">
+                                                1952                                    
+                                             </option>
+                                             <option value="1953">
+                                                1953                                    
+                                             </option>
+                                             <option value="1954">
+                                                1954                                    
+                                             </option>
+                                             <option value="1955">
+                                                1955                                    
+                                             </option>
+                                             <option value="1956">
+                                                1956                                    
+                                             </option>
+                                             <option value="1957">
+                                                1957                                    
+                                             </option>
+                                             <option value="1958">
+                                                1958                                    
+                                             </option>
+                                             <option value="1959">
+                                                1959                                    
+                                             </option>
+                                             <option value="1960">
+                                                1960                                    
+                                             </option>
+                                             <option value="1961">
+                                                1961                                    
+                                             </option>
+                                             <option value="1962">
+                                                1962                                    
+                                             </option>
+                                             <option value="1963">
+                                                1963                                    
+                                             </option>
+                                             <option value="1964">
+                                                1964                                    
+                                             </option>
+                                             <option value="1965">
+                                                1965                                    
+                                             </option>
+                                             <option value="1966">
+                                                1966                                    
+                                             </option>
+                                             <option value="1967">
+                                                1967                                    
+                                             </option>
+                                             <option value="1968">
+                                                1968                                    
+                                             </option>
+                                             <option value="1969">
+                                                1969                                    
+                                             </option>
+                                             <option value="1970">
+                                                1970                                    
+                                             </option>
+                                             <option value="1971">
+                                                1971                                    
+                                             </option>
+                                             <option value="1972">
+                                                1972                                    
+                                             </option>
+                                             <option value="1973">
+                                                1973                                    
+                                             </option>
+                                             <option value="1974">
+                                                1974                                    
+                                             </option>
+                                             <option value="1975">
+                                                1975                                    
+                                             </option>
+                                             <option value="1976">
+                                                1976                                    
+                                             </option>
+                                             <option value="1977">
+                                                1977                                    
+                                             </option>
+                                             <option value="1978">
+                                                1978                                    
+                                             </option>
+                                             <option value="1979">
+                                                1979                                    
+                                             </option>
+                                             <option value="1980">
+                                                1980                                    
+                                             </option>
+                                             <option value="1981">
+                                                1981                                    
+                                             </option>
+                                             <option value="1982">
+                                                1982                                    
+                                             </option>
+                                             <option value="1983">
+                                                1983                                    
+                                             </option>
+                                             <option value="1984">
+                                                1984                                    
+                                             </option>
+                                             <option value="1985">
+                                                1985                                    
+                                             </option>
+                                             <option value="1986">
+                                                1986                                    
+                                             </option>
+                                             <option value="1987">
+                                                1987                                    
+                                             </option>
+                                             <option value="1988">
+                                                1988                                    
+                                             </option>
+                                             <option value="1989">
+                                                1989                                    
+                                             </option>
+                                             <option value="1990">
+                                                1990                                    
+                                             </option>
+                                             <option value="1991">
+                                                1991                                    
+                                             </option>
+                                             <option value="1992">
+                                                1992                                    
+                                             </option>
+                                             <option value="1993">
+                                                1993                                    
+                                             </option>
+                                             <option value="1994">
+                                                1994                                    
+                                             </option>
+                                             <option value="1995">
+                                                1995                                    
+                                             </option>
+                                             <option value="1996">
+                                                1996                                    
+                                             </option>
+                                             <option value="1997">
+                                                1997                                    
+                                             </option>
+                                             <option value="1998">
+                                                1998                                    
+                                             </option>
+                                             <option value="1999">
+                                                1999                                    
+                                             </option>
+                                             <option value="2000">
+                                                2000                                    
+                                             </option>
+                                             <option value="2001">
+                                                2001                                    
+                                             </option>
+                                             <option value="2002">
+                                                2002                                    
+                                             </option>
+                                             <option value="2003">
+                                                2003                                    
+                                             </option>
+                                             <option value="2004">
+                                                2004                                    
+                                             </option>
+                                             <option value="2005">
+                                                2005                                    
+                                             </option>
+                                             <option value="2006">
+                                                2006                                    
+                                             </option>
+                                             <option value="2007">
+                                                2007                                    
+                                             </option>
+                                             <option value="2008">
+                                                2008                                    
+                                             </option>
+                                             <option value="2009">
+                                                2009                                    
+                                             </option>
+                                             <option value="2010">
+                                                2010                                    
+                                             </option>
+                                             <option value="2011">
+                                                2011                                    
+                                             </option>
+                                             <option value="2012">
+                                                2012                                    
+                                             </option>
+                                             <option value="2013">
+                                                2013                                    
+                                             </option>
+                                             <option value="2014">
+                                                2014                                    
+                                             </option>
+                                             <option value="2015">
+                                                2015                                    
+                                             </option>
+                                             <option value="2016">
+                                                2016                                    
+                                             </option>
+                                             <option value="2017">
+                                                2017                                    
+                                             </option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                    <div class="control-group">
+                                       <label class="control-label">Date Of Joining</label>
+                                       <div class="controls">
+                                          <input type="text" class="datepicker fill-up validate[required]" name="doj" />
+                                       </div>
+                                    </div>
+                                    <div class="control-group">
+                                       <label class="control-label">Father Name</label>
+                                       <div class="controls">
+                                          <input type="text" class="validate[required]" name="father_first_name" />
+                                          <input type="text" class="validate[required]" name="father_last_name"  />
+                                       </div>
+                                    </div>
+                                    <div class="control-group">
+                                       <label class="control-label">Mother Name</label>
+                                       <div class="controls">
+                                          <input type="text" class="validate[required]" name="mother_first_name"/>
+                                          <input type="text" class="validate[required]" name="mother_last_name" />
+                                       </div>
+                                    </div>
+                                    <div class="control-group">
+                                       <label class="control-label">Birth Place</label>
+                                       <div class="controls">
+                                          <input type="text" class="validate[required]" name="birth_place" />
+                                       </div>
+                                    </div>
+                                    <!--<div class="control-group">
+                                       <label class="control-label">Blood Group</label>
+                                       
+                                       <div class="controls">
+                                       
+                                           <input type="text" class="validate[required]" name="blood_group" />
+                                       
+                                       </div>
+                                       
+                                       </div>-->
+                                    <!--<div class="control-group">
+                                       <label class="control-label">Height</label>
+                                       
+                                       <div class="controls">
+                                       
+                                           <input type="text" class="validate[required]" name="height" />
+                                       
+                                       </div>
+                                       
+                                       </div>-->
+                                    <!-- <div class="control-group">
+                                       <label class="control-label">Weight</label>
+                                       
+                                       <div class="controls">
+                                       
+                                           <input type="text" class="validate[required]" name="weight" />
+                                       
+                                       </div>
+                                       
+                                       </div>-->
+                                    <!--<div class="control-group">
+                                       <label class="control-label"></label>
+                                       
+                                       <div class="controls">
+                                       
+                                           <input type="text" class="validate[required]" name="religion"  />
+                                           <input type="text" class="validate[required]" name="cast"  />
+                                       </div>
+                                       
+                                       </div>-->
+                                    <div class="control-group">
+                                       <label class="control-label">Nationality</label>
+                                       <div class="controls">
+                                          <input type="text" class="validate[required]" name="nationality"  />
+                                       </div>
+                                    </div>
+                                    <!--<div class="control-group">
+                                       <label class="control-label">Student Qatar Id</label>
+                                       
+                                       <div class="controls">
+                                       
+                                           <input type="text" class="validate[required]" name="student_qatar_id"  />
+                                       
+                                       </div>
+                                       
+                                       </div>
+                                       <div class="control-group">
+                                       	 <label class="control-label"></label>
+                                       <div class="controls">
+                                       
+                                           <select class="uniform validate[required]" name="country_id">
+                                           <option value="">------ Select Country ----</option> 
+                                           											<option value=""></option> 
+                                                     </select>
+                                       
+                                       </div>
+                                       
+                                       </div>-->
+                                    <!-- <div class="control-group">
+                                       <label class="control-label">Passport Number</label>
+                                       
+                                       <div class="controls">
+                                       
+                                           <input type="text" class="fill-up" name="passport_number" />
+                                       
+                                       </div>
+                                       
+                                       </div>
+                                       
+                                       <div class="control-group">
+                                       
+                                       <label class="control-label">Date Of Issue</label>
+                                       
+                                       <div class="controls">
+                                       
+                                           <input type="text" class="datepicker fill-up" name="date_of_issue"/>
+                                       
+                                       </div>
+                                       
+                                       </div>
+                                       
+                                       <div class="control-group">
+                                       
+                                       <label class="control-label">Date Of Expiry</label>
+                                       
+                                       <div class="controls">
+                                       
+                                           <input type="text" class="datepicker fill-up" name="date_of_expiry"/>
+                                       
+                                       </div>
+                                       
+                                       </div>-->
+                                    <!--<div class="control-group">
+                                       <label class="control-label"></label>
+                                       
+                                       <div class="controls">
+                                       
+                                           <input type="text" class="validate[required]" name="email" id="student_email_val"   />
+                                       <span id="val_img"></span>
+                                       </div>
+                                       
+                                       </div>-->
+                                    <!--<div class="control-group">
+                                       <label class="control-label"></label>
+                                       
+                                       <div class="controls">
+                                       
+                                           <input type="text" class="validate[required]" name="password" />
+                                       
+                                       </div>
+                                       
+                                       </div>-->
+                                    <!--<div class="control-group">
+                                       <label class="control-label">Parent Username/email</label>
+                                       
+                                       <div class="controls">
+                                       
+                                           <input type="text" class="validate[required]" name="parent_email"  />
+                                       
+                                       </div>
+                                       
+                                       </div>
+                                       
+                                       <div class="control-group">
+                                       
+                                       <label class="control-label">Parent Password</label>
+                                       
+                                       <div class="controls">
+                                       
+                                           <input type="password" class="validate[required]" name="parent_password"/>
+                                       
+                                       </div>
+                                       
+                                       </div>-->
+                                    <div class="control-group">
+                                       <label class="control-label">Parent Phone</label>
+                                       <div class="controls">
+                                          <input type="text" class="validate[required]" name="parent_phone1"  />
+                                          <input type="text" class="" name="parent_phone2"  />
+                                       </div>
+                                    </div>
+                                    <!--<div class="control-group">
+                                       <label class="control-label">Parent Email</label>
+                                       
+                                       <div class="controls">
+                                       
+                                           <input type="text" class="validate[required]" name="student_parent_email"/>
+                                       
+                                       </div>
+                                       
+                                       </div>--> 
+                                    <div class="control-group">
+                                       <label class="control-label">Father Occupation</label>
+                                       <div class="controls">
+                                          <input type="text" class="validate[required]" name="occupation" />            
+                                       </div>
+                                    </div>
+                                    <div class="control-group">
+                                       <label class="control-label">Income(per Annum)</label>
+                                       <div class="controls">
+                                          <input type="text" class="validate[required]" name="income_per_annum" />
+                                       </div>
+                                    </div>
+                                    <!-- <div class="control-group">
+                                       <label class="control-label">Father Qatar Id</label>
+                                       
+                                       <div class="controls">
+                                       
+                                           <input type="text" class="validate[required]" name="father_qatar_id"  />
+                                       
+                                       </div>
+                                       
+                                       </div>
+                                       <div class="control-group">
+                                       
+                                       <label class="control-label">Mother Qatar Id</label>
+                                       
+                                       <div class="controls">
+                                       
+                                           <input type="text" class="validate[required]" name="mother_qatar_id"  />
+                                       
+                                       </div>
+                                       
+                                       </div>-->
+                                    <!--<div class="control-group">
+                                       <label class="control-label"></label>
+                                       <div class="controls">
+                                       
+                                         <select class="uniform validate[required]" name="father_country_id">
+                                         											<option value=""></option> 
+                                                   </select>
+                                       
+                                       </div>
+                                       
+                                       </div>-->
+                                    <!--<div class="control-group">
+                                       <label class="control-label"></label>
+                                       <div class="controls">
+                                       
+                                         <select class="uniform validate[required]" name="mother_country_id">
+                                         <option value="">------ Select Country ----</option> 
+                                         											<option value=""></option> 
+                                                   </select>
+                                       
+                                       </div>
+                                       
+                                       </div>-->
+                                    <div class="control-group">
+                                       <label class="control-label">Present Address</label>
+                                       <div class="controls">
+                                          <textarea name="address" class="validate[required]" rows="6" columns="4" ></textarea>
+                                       </div>
+                                    </div>
+                                    <div class="control-group">
+                                       <label class="control-label">Permanent Address</label>
+                                       <div class="controls">
+                                          <textarea name="permanent_address" class="validate[required]" rows="6" columns="4" ></textarea>
+                                       </div>
+                                    </div>
+                                    <div class="control-group">
+                                       <label class="control-label">Previous School Name</label>
+                                       <div class="controls">
+                                          <input type="text" class="" name="previous_school_name" />
+                                       </div>
+                                    </div>
+                                    <!--
+                                       <div class="control-group">
+                                       
+                                           <label class="control-label">Address</label>
+                                       
+                                           <div class="controls">
+                                       
+                                               <input type="text" class="" name="address"/>
+                                       
+                                           </div>
+                                       
+                                       </div>
+                                       -->
+                                    <!--
+                                       <div class="control-group">
+                                       
+                                           <label class="control-label">Student Email</label>
+                                       
+                                           <div class="controls">
+                                       
+                                               <input type="text" class="" name="email"/>
+                                       
+                                           </div>
+                                       
+                                       </div>
+                                       
+                                       <div class="control-group">
+                                       
+                                           <label class="control-label">Student Password</label>
+                                       
+                                           <div class="controls">
+                                       
+                                               <input type="text" class="" name="password"/>
+                                       
+                                           </div>
+                                       
+                                       </div>
+                                       
+                                       <div class="control-group">
+                                       
+                                           <label class="control-label">Parent Email</label>
+                                       
+                                           <div class="controls">
+                                       
+                                               <input type="text" class="" name="parent_email"/>
+                                       
+                                           </div>
+                                       
+                                       </div>
+                                        <div class="control-group">
+                                       
+                                           <label class="control-label">Parent Password</label>
+                                       
+                                           <div class="controls">
+                                       
+                                               <input type="text" class="" name="parent_password"/>
+                                       
+                                           </div>
+                                       
+                                       </div>                            
+                                       
+                                       
+                                       
+                                       <div class="control-group">
+                                       
+                                           <label class="control-label">Roll</label>
+                                       
+                                           <div class="controls">
+                                       
+                                               <input type="text" class="" name="roll"/>
+                                       
+                                           </div>
+                                       
+                                       </div>-->
+                                    <div class="control-group">
+                                       <label class="control-label">Photo</label>
+                                       <div class="controls" style="width:210px;">
+                                          <input type="file" class="validate[required]" name="userfile" id="imgInp" />
+                                       </div>
+                                    </div>
+                                    <div class="control-group">
+                                       <label class="control-label"></label>
+                                       <div class="controls" style="width:210px;">
+                                          <img id="blah" src="http://localhost:8081/sms/uploads/user.jpg" alt="your image" height="100" />
+                                       </div>
+                                    </div>
+                                    <!---------------------------------------->
+                                    <div class="control-group">
+                                       <label class="control-label">RTE</label>
+                                       <div class="controls">
+                                          <label class="radio inline">
+                                          <input type="radio" name="rte" id="rte_yes" value="1"  > Yes
+                                          </label>
+                                          <label class="radio inline">
+                                          <input type="radio" name="rte" id="rte_no" value="0" checked> No
+                                          </label>
+                                       </div>
+                                    </div>
+                                    <!----------------------------------------->
+                                    <div class="control-group">
+                                       <label class="control-label">Aadhaar Number</label>
+                                       <div class="controls">
+                                          <input type="text" class="" name="aadhaar_number" value=""/>            
+                                       </div>
+                                    </div>
+                                    <!----------------------------------------->
+                                 </div>
+                                 <div class="form-actions">
+                                    <button type="submit" class="btn btn-gray">Add Student</button>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                        <!----Upload FORM ENDS--->
+                     </div>
+                  </div>
+               </div>
+               <script>
+                  function readURL(input) {
+                  
+                      if (input.files && input.files[0]) {
+                  
+                          var reader = new FileReader();
+                  
+                          
+                  
+                          reader.onload = function (e) {
+                  
+                              $('#blah').attr('src', e.target.result);
+                  
+                          }
+                  
+                          
+                  
+                          reader.readAsDataURL(input.files[0]);
+                  
+                      }
+                  
+                  }
+                  
+                  
+                  
+                  $("#imgInp").change(function(){
+                  
+                      readURL(this);
+                  
+                  });
+                  $('#student_class_id').on('change',function(){
+                  $('#student_roll_val').val('');
+                  $('#val_roll_img').removeAttr("class").text('');
+                  });
+                  $('#student_roll_val').on('change',function(){
+                  
+                  var sroll = $(this).val();
+                  
+                  var sclass = $('#student_class_id').val();
+                  
+                  if(sroll!=''){
+                  
+                  $('#val_roll_img').removeAttr("class").text('').append('<img title="http://localhost:8081/sms/template/images/loading.gif" src="http://localhost:8081/sms/template/images/loading.gif">');
+                  
+                  $.ajax({
+                  			type: 'POST',
+                  			url: 'http://localhost:8081/sms/index.php?admin/sdtrollcheck/',
+                  			data: { chkroll:sroll, chkrollcls:sclass},
+                  			success: function(data) {
+                  				//alert(data);
+                  				
+                  				if(data=='true'){
+                  					$("#val_roll_img").text('').attr("class","label label-warning").text( "Roll no '"+ sroll +" ' already exists try another !" );
+                  					$("#student_roll_val").val('').focus();
+                  					
+                  				} else {
+                  					$("#val_roll_img").removeAttr("class").text('').attr("class","label label-success").text( "Roll no '"+ sroll +" ' available !" );
+                  					
+                  				}
+                  				
+                  			}
+                    });
+                    
+                  } else {
+                  $('#val_roll_img').removeAttr("class").text('');
+                  }
+                  
+                  
+                  });
+                  
+                  
+                  /*$('#admission_number').on('change',function(){
+                  
+                  var sadmission_number = $(this).val();
+                  
+                  
+                  if(sadmission_number!=''){
+                  
+                  $('#val_admission_number_img').removeAttr("class").text('').append('<img title="template/images/loading.gif" src="template/images/loading.gif">');
+                  
+                  $.ajax({
+                  			type: 'POST',
+                  			url: 'index.php?admin/sdtamcheck/',
+                  			data: { chkan:sadmission_number},
+                  			success: function(data) {
+                  				
+                  				
+                  				if(data=='true'){
+                  					$("#val_admission_number_img").text('').attr("class","label label-warning").text( "Admission Number'"+ sadmission_number +" ' already exists try another !" );
+                  					$("#admission_number").val('').focus();
+                  					
+                  				} else {
+                  					$("#val_admission_number_img").removeAttr("class").text('').attr("class","label label-success").text( "Admission Number '"+ sadmission_number +" ' available !" );
+                  					
+                  				}
+                  				
+                  			}
+                    });
+                    
+                  } else {
+                  $('#val_admission_number_img').removeAttr("class").text('');
+                  }
+                  
+                  
+                  });*/
+                  
+                  
+                  
+                  $('#student_email_val').on('change',function(){
+                  
+                  var semail = $(this).val();
+                  
+                  if (!validateEmail(semail)) {
+                  $("#val_img").removeAttr("class"); 
+                  $("#val_img").attr("class","label label-warning");
+                  $("#val_img").text('');
+                          $("#val_img" ).text('Please enter valid email!');
+                  $("#student_email_val").val('');
+                  $("#student_email_val").focus();
+                  return false;
+                      }
+                  
+                  $('#val_img').append('<img title="http://localhost:8081/sms/template/images/loading.gif" src="http://localhost:8081/sms/template/images/loading.gif">');
+                  
+                  $.ajax({
+                  			type: 'POST',
+                  			url: 'http://localhost:8081/sms/index.php?admin/sdtemailcheck/',
+                  			data: { chkmail:semail },
+                  			success: function(data) {
+                  				//alert(data);
+                  				
+                  				if(data=='true'){
+                  					$("#val_img").text('');
+                  					$("#student_email_val").val('');
+                  					$("#student_email_val").focus();
+                  					$("#val_img").attr("class","label label-warning");
+                  					$("#val_img" ).text( "'"+ semail +" ' already register try another !" );
+                  				} else {
+                  					$("#val_img").removeAttr("class");
+                  					$('#val_img').text('');
+                  					$("#val_img").attr("class","label label-success");
+                  					$("#val_img" ).text( "'"+ semail +" ' available !" );
+                  				}
+                  				
+                  			}
+                    });
+                  
+                  });
+                  
+                  
+                  
+                  
+                  // Function that validates email address through a regular expression.
+                  function validateEmail(sEmail) {
+                  var filter =  /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+                  
+                  if (filter.test(sEmail)) {
+                      return true;
+                  }
+                  else {
+                      return false;
+                  }
+                  }
+                  
+               </script>
+               <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+               <script src="template/js/jquery.dataTables.js"></script>
+               <link rel="stylesheet" type="text/css" href="template/css/dataTables.tableTools.css">
+               <script type="text/javascript" language="javascript" src="template/js/dataTables.tableTools.js"></script>
+               <script type="text/javascript" language="javascript" src="template/js/dataTables.bootstrap.js"></script>
+               <script>var $j = jQuery.noConflict(true);</script>
+               <script>
+                  $(document).ready(function() {
+                      $j('#teacher_dtable').DataTable( {
+                  		dom: 'T<"clear">lfrtip',
+                  		 tableTools: {
+                              "sSwfPath": "template/swf/copy_csv_xls_pdf.swf",
+                  			"aButtons": [
+                              {
+                                  "sExtends": "copy",
+                                  "mColumns": [0, 2, 3, 4]
+                              },
+                              {
+                                  "sExtends": "csv",
+                                  "mColumns": [0, 2, 3, 4]
+                              },
+                              {
+                                  "sExtends": "pdf",
+                                  "mColumns": [0, 2, 3, 4]
+                              },
+                              {
+                                  "sExtends": "print",
+                                  "mColumns": [0, 2, 3, 4]
+                              },
+                          ]
+                          }
+                  	} );
+                  } );
+               </script>
+               <!-- Script for Checkboxes -->
+               <script language="javascript">
+                  $(function(){
+                  $("#select_all").click(function()
+                  {
+                  if(this.checked){
+                  $('.roll_sel').each(function(){
+                  	this.checked = true;
+                  });
+                  }else{
+                  $('.roll_sel').each(function(){
+                  	this.checked = false;
+                  });
+                  
+                  }
+                  });
+                  
+                  $(".roll_sel").click(function(){
+                  if($(".roll_sel").length==$(".roll_sel:checked").length){
+                  
+                  $("#select_all").attr("checked","checked");
+                  
+                  }else{$("#select_all").removeAttr("checked");
+                  
+                  }});
+                  
+                  });
+                  
+                  
+                  
+                  $('.custom-tam-indsudsms').on('click',function(e){
+                  	
+                  	var stype = $(this).data('stype');
+                  	var stndid = $(this).data('studentid');
+                  	
+                  	if(stype=='sms'){
+                  	
+                  	
+                  	
+                  	$('#sms-overlay').show();
+                  	$.ajax({
+                  			type: 'POST',
+                  			url: 'http://localhost:8081/sms/index.php?admin/sms_student_data',
+                  			data: { sid:stndid },
+                  			success: function(data) {
+                  				
+                  			
+                  			$('#custom-tam-model').text('').append(data);
+                  								
+                  			$('#sms-overlay').hide();					
+                  								
+                  			}
+                  	});
+                  	
+                  	} else if(stype=='mail') {
+                  		
+                  	$('#sms-overlay').show();
+                  	$.ajax({
+                  			type: 'POST',
+                  			url: 'http://localhost:8081/sms/index.php?admin/email_student_data',
+                  			data: { sid:stndid },
+                  			success: function(data) {
+                  				
+                  			
+                  			$('#custom-tam-model').text('').append(data);
+                  								
+                  			$('#sms-overlay').hide();					
+                  								
+                  			}
+                  	});
+                  	
+                  	}
+                  	
+                  	e.preventDefault();
+                  	$('#custom-tam-model').modal('show');
+                  
+                  });
+                  $(document).ready(function() {
+                      var text_max = 130;
+                      $('#smessage').html(text_max + ' characters remaining');
+                  
+                      $(document).on('keyup','#smessage',function() {
+                  		$('#sms-feedback').text('');
+                          var text_length = $('#smessage').val().length;
+                          var text_remaining = text_max - text_length;
+                  
+                          $('#smessage_feedback').html(text_remaining + ' characters remaining');
+                      });
+                  });
+                  
+                  $(document).on('click','#sndsmsbtn',function(e){
+                  	
+                  	var smsg = $('#smessage').val();
+                  	
+                  	if(smsg.trim()==''){
+                  		$('#sms-feedback').text('').append('<div class="alert alert-danger"><strong>Please enter message!</strong> </div>');
+                  		return true;
+                  	}
+                  	
+                  	$('#sms-overlay').show();
+                  	$.ajax({
+                  			type: 'POST',
+                  			url: 'http://localhost:8081/sms/index.php?admin/sms_student_snd',
+                  			data:$( '#snd-frm' ).serialize(),
+                  			success: function(data) {
+                  			
+                  				if(data == 'true'){
+                  					$('#sms-feedback').text('').append('<div class="alert alert-success"><strong>SMS send successfully!</strong> </div>');
+                  					$('#snd-frm,#sms-overlay').hide();
+                  					setTimeout('hidemodel()', 3000);
+                  				} else {
+                  					
+                  					$('#sms-feedback').text('').append('<div class="alert alert-danger"><strong>An error while sending sms!</strong> Please try again. </div>');
+                  					$('#sms-overlay').hide();
+                  				}
+                  
+                  						
+                  			}
+                  	});
+                  	
+                  });
+                  
+                  $(document).on('click','#sndmailbtn',function(e){
+                  	
+                  	var smsg = $('#smmessage').val();
+                  	
+                  	var ssub = $('#ssub').val();
+                  	
+                  	if(ssub.trim()==''){
+                  		$('#sms-feedback').text('').append('<div class="alert alert-danger"><strong>Please enter subject!</strong> </div>');
+                  		$('#ssub').focus();
+                  		return true;
+                  	} if(smsg.trim()==''){
+                  		$('#sms-feedback').text('').append('<div class="alert alert-danger"><strong>Please enter message!</strong> </div>');
+                  		$('#smmessage').focus();
+                  		return true;
+                  	} 
+                  	
+                  	$('#sms-overlay').show();
+                  	$.ajax({
+                  			type: 'POST',
+                  			url: 'http://localhost:8081/sms/index.php?admin/mail_student_snd',
+                  			data:$( '#snd-frm' ).serialize(),
+                  			success: function(data) {
+                  			//alert(data)
+                  				if(data == 'true'){
+                  					$('#sms-feedback').text('').append('<div class="alert alert-success"><strong>Mail send successfully!</strong> </div>');
+                  					$('#snd-frm,#sms-overlay').hide();
+                  					setTimeout('hidemodel()', 3000);
+                  				} else {
+                  					
+                  					$('#sms-feedback').text('').append('<div class="alert alert-danger"><strong>An error while sending mail!</strong> Please try again. </div>');
+                  					$('#sms-overlay').hide();
+                  				}
+                  
+                  						
+                  			}
+                  	});
+                  	
+                  });
+                  function hidemodel(){
+                  	$("#custom-tam-model").modal("hide");
+                  }
+                  
+               </script>
+               <!-- END of Checkbox Script -->            
+            </div>
+            <div style="clear:both;color:#aaa; padding:20px;">
+               <!--<center>&copy; 2013, CloudCampus</center>-->
+            </div>
+         </div>
+      </div>
+   </body>
+   <script type="text/javascript">
+      $('.datepicker').datepicker({
+         format: 'dd/mm/yyyy',
+      })
+   </script>
+   <!-----------HIDDEN MODAL FORM - COMMON IN ALL PAGES ------>
+   <div id="modal-form" class="modal hide fade">
+      <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+         <div id="modal-tablesLabel" style="color:#fff; font-size:16px;">&nbsp; </div>
+      </div>
+      <div class="modal-body" id="modal-body">loading data..</div>
+      <div class="modal-footer">
+         <button class="btn btn-gray" onclick="custom_print('frame1')">Print</button>
+         <button class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+   </div>
+   <!-----------HIDDEN MODAL DELETE CONFIRMATION - COMMON IN ALL PAGES ------>
+   <div id="modal-delete" class="modal hide fade" style="height:140px;">
+      <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+         <h6 id="modal-tablesLabel"> <i class="icon-info-sign"></i></h6>
+      </div>
+      <div class="modal-delete-body" id="modal-body-delete">Delete data ?</div>
+      <div class="modal-footer">
+         <a href="" id="delete_link" class="btn btn-red" >Confirm</a>
+         <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+   </div>
+   <!-- Modal -->
+   <div id="custom-tam-model" class="modal hide fade" tabindex="-1" role="dialog">
+      <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+         <h3 id="custom-tam-mode">Send SMS to Absenties</h3>
+      </div>
+      <div class="modal-body">
+         <div id="custom-tam-model-body">Test</div>
+      </div>
+      <div class="modal-footer">
+         <button class="btn btn-success btn-small" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+   </div>
+   <!-- Modal -->
+   <div id="custom-tam-model-roll" class="modal hide fade" tabindex="-1" role="dialog">
+      <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+         <h3 id="custom-tam-mode">Students List</h3>
+      </div>
+      <div class="modal-body">
+         <div id="custom-tam-model-body-roll">Test</div>
+      </div>
+      <hr />
+      <div class="modal-footer">
+         <button class="btn btn-success btn-small" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+   </div>
+   <!-- Modal -->
+   <div id="custom-tam-model-pay-his" class="modal hide fade" tabindex="-1" role="dialog">
+      <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+         <h3 id="custom-tam-mode">Payment History </h3>
+      </div>
+      <div class="modal-body">
+         <div id="custom-tam-model-body-pay-his">Test</div>
+      </div>
+      <hr />
+      <div class="modal-footer">
+         <button class="btn btn-success btn-small" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+   </div>
+   <!-- Modal -->
+   <div id="custom-tam-model-sms-unpaid" class="modal hide fade" tabindex="-1" role="dialog">
+      <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+         <h3 id="custom-tam-mode">Send SMS to Unpaid Members</h3>
+      </div>
+      <div class="modal-body">
+         <div id="custom-tam-model-body-sms-unpaid">Test</div>
+      </div>
+      <hr />
+      <div class="modal-footer">
+         <button class="btn btn-success btn-small" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+   </div>
+   <!-- Modal -->
+   <div id="custom-tam-model-ticket" class="modal hide fade" tabindex="-1" role="dialog">
+      <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+         <h3 id="custom-tam-mode">Submit Your Ticket</h3>
+      </div>
+      <div class="modal-body">
+         <div>
+            <a href="http://tammanager.com/smstickets" target="_blank" class="btn btn-info">Click Me</a>
+            <p>and please login with following details </p>
+            <p>Username : <span>admin@tam.com</span></p>
+            <p>Password : <span>1234</span></p>
+         </div>
+      </div>
+      <hr />
+      <div class="modal-footer">
+         <button class="btn btn-success btn-small" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+   </div>
+   <script>
+      function modal(param1 ,param2 ,param3)
+      {
+      	document.getElementById('modal-body').innerHTML = 
+      		'<iframe id="frame1" src="http://localhost:8081/sms/index.php?modal/popup/'+param1+'/'+param2+'/'+param3+'" width="100%" height="400" frameborder="0"></iframe>';
+      
+      	document.getElementById('modal-tablesLabel').innerHTML = param1.replace("_"," ");
+      }
+      
+      function modal_delete(param1)
+      {
+      	document.getElementById('delete_link').href = param1;
+      }
+      
+      /////////////PRINT A DIV FUNCTION////////////////
+      
+      function custom_print(div_id)
+      {
+      	var mywindow = window.open('', 'my div', 'height=400,width=600');
+      	mywindow.document.write(document.getElementById(div_id).contentWindow.document.body.innerHTML);
+      	mywindow.print();
+      	mywindow.close();
+      	return true;
+      }
+      
+   </script>
+</html>
+
