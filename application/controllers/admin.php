@@ -505,8 +505,14 @@ class Admin extends CI_Controller {
         $page_data['page_name'] = 'student';
         $page_data['page_title'] = get_phrase('view_student');
 		if(!empty($param1) && empty($param2)){
+			//$this->db->select_max('roll');
+			//$this->db->where('class_id',$param1);
+		   //$this->db->get('student');
+			$page_data['next_roll']=$this->db->query('SELECT MAX(CONVERT(roll,UNSIGNED INTEGER))+1 AS id FROM student WHERE class_id="'.$param1.'"')->row()->id;
+			if(empty($page_data['next_roll'])){
+				$page_data['next_roll']=1;
+			}
 			$this->db->where('class_id',$param1);
-			 
 			$page_data['student_count']=$this->db->count_all_results('student');
 		}
 		

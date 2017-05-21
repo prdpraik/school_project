@@ -492,15 +492,17 @@ No. of student in a class <?php echo $student_count; ?>
 								
                                 <div class="controls">
 
-                                    <select name="class_id" id="student_class_id" class="uniform" style="width:100%;">
+                                    <select name="class_id" id="student_class_id" class="uniform" style="width:100%;"  onchange="window.location='http://localhost:8081/sms/index.php?admin/student/'+this.value">
 										<option value="">-- Select Class --</option>
-                                        <?php
+                                         
+										<?php
                                             $classes = $this->db->get('class')->result_array();
 
                                             foreach ($classes as $row):
                                         ?>
 
-                                            <option value="<?php echo $row['class_id']; ?>">
+                                            <option value="<?php echo $row['class_id']; ?>"
+											<?php if ($class_id == $row['class_id']) echo 'selected'; ?>>
 
                                                 <?php echo $row['name'].'-'.$row['name_numeric']; ?>
 
@@ -546,7 +548,7 @@ No. of student in a class <?php echo $student_count; ?>
 
                                 <div class="controls">
 
-                                    <input type="text" class="validate[required]" name="roll" id="student_roll_val"/>
+                                    <input type="text" class="validate[required]" name="roll" id="student_roll_val" value="<?php echo $next_roll; ?>"/>
 									<span id="val_roll_img"></span>
                                 </div>
 
