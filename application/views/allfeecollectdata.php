@@ -2,6 +2,7 @@
     <?php
 	
 	$array_data=array();
+	
 	?>
     	<div class="row-fluid">
         
@@ -10,9 +11,12 @@
                 	<?php 
 					
 					
-					$i=1; //print_r($fcollectstandarddata); ?>
+					$i=1; //print_r($class_roll_data); ?>
                     <?php if(!empty($class_roll_data)) extract($class_roll_data); $ci =& get_instance();  $ci->load->model('fee_model');  ?>
                     <div class="custom-tam-table-fee">
+					<?php
+						  //print_r($fcollectrolldata);
+						?>
                     <table class="table table-bordered">
                     	<tr>
                         	<th></th>
@@ -62,19 +66,7 @@
                             <td><?php echo $array_data[$i]['fdisamount']= $fdisamount ?></td>
                             <td><?php echo $array_data[$i]['fppaidamount']= $fppaidamount?></td>
                             <td><?php echo  $array_data[$i]['fpayamount']=number_format($fpayamount,2);$array_data[$i]['payamount']=$fpayamount; ?></td>
-                            <!--<td>
-                            
-                            
-                            <button class="btn btn-small btn-info custom-fee-pay-btn" name="paybutton" id="paybutton_<?php echo $i; ?>" value="" data-pay-val-id="<?php echo $i; ?>" <?php if($fpayamount == 0) { echo "disabled";  } ?>>Pay</button>
-                         
-                            <button class="btn btn-small btn-success custom-fee-pay-his-btn" name="payhisbutton" id="payhisbutton_<?php echo $i; ?>" value="" data-pay-his-id="<?php echo $i; ?>"  <?php  if($fp_payamount == 0) { echo "disabled";}else { $cnt++; } ?>>View Pay History</button>
-                           
-                            
-                             <input type="hidden" name="hid_payamount_<?php echo $i; ?>" id="hid_payamount_<?php echo $i; ?>" value="<?php echo $fpayamount; ?>">
-                             <input type="hidden" name="hid_payamount_particular_<?php echo $i; ?>" id="hid_payamount_particular_<?php echo $i; ?>" value="<?php echo $fc_perid; ?>">
-                            
-                            
-                            </td>-->
+                      
                             
                         </tr>
                     	<?php $i++; } } ?>
@@ -114,16 +106,6 @@
                             <td><?php echo $array_data[$i]['fdisamount']= $fdisamount ?></td>
                             <td><?php echo $array_data[$i]['fppaidamount']=$fppaidamount?></td>
                             <td><?php echo  $array_data[$i]['fpayamount']=number_format($fpayamount,2);$array_data[$i]['payamount']=$fpayamount;?></td>
-                            <!--<td>
-                            
-                            <button class="btn btn-small btn-info custom-fee-pay-btn" name="paybutton" id="paybutton_<?php echo $i; ?>" value="" data-pay-val-id="<?php echo $i; ?>" <?php if($fpayamount == 0) { echo "disabled";  } ?>>Pay</button>
-                         
-                            <button class="btn btn-small btn-success custom-fee-pay-his-btn" name="payhisbutton" id="payhisbutton_<?php echo $i; ?>" value="" data-pay-his-id="<?php echo $i; ?>"  <?php  if($fp_payamount == 0) { echo "disabled";} else { $cnt++; }  ?>>View Pay History</button>
-                            
-                             <input type="hidden" name="hid_payamount_<?php echo $i; ?>" id="hid_payamount_<?php echo $i; ?>" value="<?php echo $fpayamount; ?>">
-                             <input type="hidden" name="hid_payamount_particular_<?php echo $i; ?>" id="hid_payamount_particular_<?php echo $i; ?>" value="<?php echo $fc_perid; ?>">
-                            
-                            </td>-->
                         </tr>
                     	<?php $i++; } } ?>
                         
@@ -161,40 +143,22 @@
                             <td><?php echo $array_data[$i]['fdisamount']= $fdisamount ?></td>
                             <td><?php echo $array_data[$i]['fppaidamount']=$fppaidamount?></td>
                             <td><?php echo  $array_data[$i]['fpayamount']=number_format($fpayamount,2);$array_data[$i]['payamount']=$fpayamount; ?></td>
-                            <!--<td>
                             
-                            <button class="btn btn-small btn-info custom-fee-pay-btn" name="paybutton" id="paybutton_<?php echo $i; ?>" value="" data-pay-val-id="<?php echo $i; ?>" <?php if($fpayamount == 0) { echo "disabled";  } ?>>Pay</button>
-                         
-                            <button class="btn btn-small btn-success custom-fee-pay-his-btn" name="payhisbutton" id="payhisbutton_<?php echo $i; ?>" value="" data-pay-his-id="<?php echo $i; ?>"  <?php  if($fp_payamount == 0) { echo "disabled";} else { $cnt++; } ?>>View Pay History</button>
-                            
-                             <input type="hidden" name="hid_payamount_<?php echo $i; ?>" id="hid_payamount_<?php echo $i; ?>" value="<?php echo $fpayamount; ?>">
-                             <input type="hidden" name="hid_payamount_particular_<?php echo $i; ?>" id="hid_payamount_particular_<?php echo $i; ?>" value="<?php echo $fc_perid; ?>">
-                            
-                            
-                            </td>-->
                         </tr>
                     	<?php $i++; } } ?>
                         
                          <?php if(!empty($fcollectstandarddata)) { foreach($fcollectstandarddata as $fcollectstandarddata_view){ ?>
                         <tr>
                         
-                        	 <?php 
-							 
+                        	 <?php 	 
 							 	 $fc_perid = $fcollectstandarddata_view->fee_particular_id;
-							
-							
-							
 								$fp_payamount = $ci->fee_model->getSumPaid($fc_perid,$fc_class_id,$fc_roll_id);
-								
 								if($fp_payamount !=''){
 									
 									$fppaidamount =$fp_payamount;
 								} else {
 									$fppaidamount = 0.00;
 								}
-							
-							 
-							 
 							 $fpamount = $fcollectstandarddata_view->fee_particular_amount;
 							  $fdisamount = $fcollectstandarddata_view->fee_particular_discount;
 							  
@@ -209,19 +173,28 @@
                             <td><?php echo $array_data[$i]['fdisamount']= $fdisamount ?></td>
                             <td><?php echo $array_data[$i]['fppaidamount']=$fppaidamount?></td>
                             <td><?php echo $array_data[$i]['fpayamount']=number_format($fpayamount,2);$array_data[$i]['payamount']=$fpayamount; ?></td>
-                            <!--<td>
-                            
-                           <button class="btn btn-small btn-info custom-fee-pay-btn" name="paybutton" id="paybutton_<?php echo $i; ?>" value="" data-pay-val-id="<?php echo $i; ?>" <?php if($fpayamount == 0) { echo "disabled";  } ?>>Pay</button>
-                         
-                            <button class="btn btn-small btn-success custom-fee-pay-his-btn" name="payhisbutton" id="payhisbutton_<?php echo $i; ?>" value="" data-pay-his-id="<?php echo $i; ?>"  <?php  if($fp_payamount == 0) { echo "disabled";} else { $cnt++; } ?>>View Pay History</button>
-                            
-                            <input type="hidden" name="hid_payamount_<?php echo $i; ?>" id="hid_payamount_<?php echo $i; ?>" value="<?php echo $fpayamount; ?>">
-                            <input type="hidden" name="hid_payamount_particular_<?php echo $i; ?>" id="hid_payamount_particular_<?php echo $i; ?>" value="<?php echo $fc_perid; ?>">
-                            
-                            
-                            </td>-->
+                       
                         </tr>
                     	<?php $i++; } } ?>
+						 <?php if(!empty($balance)) { 
+						 foreach($balance as $value){
+							$array_data[$i]['fc_perid']=$value->id;
+						 ?>
+						 <tr>
+						 <td><?php echo $i; ?></td>
+						 <td><?php echo $value->name.' '.$value->name_numeric; ?></td>
+						 <td><?php echo $array_data[$i]['fee_category']='Balance'; ?></td>
+						 <td><?php echo $array_data[$i]['fee_particular_name']='Balance'; ?></td>
+						 <td><?php echo $array_data[$i]['fpamount']=$value->balance; ?></td>
+						 <td><?php echo $array_data[$i]['fdisamount']= 0; ?></td>
+						 <td><?php echo $array_data[$i]['fppaidamount']= 0; ?></td>
+						 <td><?php echo $array_data[$i]['fpayamount']=number_format($value->balance); $array_data[$i]['payamount']=$value->balance; $array_data[$i]['pay_type']=1; ?></td>
+						 </tr>
+						 <?php $i++; } 
+						 }?>
+						
+						
+						
                     </table>
                     	<input type="hidden" name="hid_payamount_class" id="hid_payamount_class" value="<?php echo $fc_class_id ?>"  />
                         <input type="hidden" name="hid_payamount_roll" id="hid_payamount_roll" value="<?php echo $fc_roll_id ?>"  />
@@ -253,7 +226,7 @@
 		 <?php }*/ } ?>
 		 <div class="row">
 			<div class="span11">
-			 <div class="custom-tam-table-fee table_new_class" style="margin-left: 35px; display:none; ">
+			 <div class="custom-tam-table-fee table_new_class" style="margin-left: 35px; display:none1; ">
 			<form name="collect_fee_amt" id="collect_fee_amt" action="javascript:void(0);">
 			 <table style="width:100%;">
 			   <tr><td>
@@ -279,12 +252,14 @@
 								  <td>'.$value['fee_category'].'</td>
 								  <td>'.$value['fee_particular_name'].'</td>
 								  <td>'.$value['fpayamount'].'
-								  <input type="hidden" rel="'.$value['fc_perid'].'" id="payable_actual_'.$value['fc_perid'].'" name="payable_actual['.$value['fc_perid'].']" value="'.$value['fpayamount'].'"/></td>
+									<input type="hidden" rel="'.$value['fc_perid'].'#'.sprintf("%d",$value['pay_type']).'" id="payable_actual_'.$value['fc_perid'].'#'.sprintf("%d",$value['pay_type']).'" name="payable_actual['.$value['fc_perid'].']" value="'.$value['fpayamount'].'"/>
+									<input type="hidden" rel="'.$value['fc_perid'].'#'.sprintf("%d",$value['pay_type']).'" id="pay_type_'.$value['fc_perid'].'#'.sprintf("%d",$value['pay_type']).'" name="pay_type['.$value['fc_perid'].']" value="'.sprintf("%d",$value['pay_type']).'"/>
+								</td>
 								   <td>
-								   <input type="text" rel="'.$value['fc_perid'].'" name="payable_amt['.$value['fc_perid'].']" class="only_number payable_amt" id="payable_amt_'.$value['fc_perid'].'"/></td>
+								   <input type="text" rel="'.$value['fc_perid'].'#'.sprintf("%d",$value['pay_type']).'" name="payable_amt['.$value['fc_perid'].']" class="only_number payable_amt" id="payable_amt_'.$value['fc_perid'].'#'.sprintf("%d",$value['pay_type']).'"/></td>
 								    <td>
-									<input type="text" rel="'.$value['fc_perid'].'" name="late_chrage['.$value['fc_perid'].']" id="late_chrage_'.$value['fc_perid'].'" class="only_number late_charge"/>
-									<input type="hidden" rel="'.$value['fc_perid'].'" id="discount_'.$value['fc_perid'].'" name="discount['.$value['fc_perid'].']" class="only_number late_charge" value="'.$value['fdisamount'].'"/>
+									<input type="text" rel="'.$value['fc_perid'].'#'.sprintf("%d",$value['pay_type']).'" name="late_chrage['.$value['fc_perid'].']" id="late_chrage_'.$value['fc_perid'].'#'.sprintf("%d",$value['pay_type']).'" class="only_number late_charge"/>
+									<input type="hidden" rel="'.$value['fc_perid'].'#'.sprintf("%d",$value['pay_type']).'" id="discount_'.$value['fc_perid'].'#'.sprintf("%d",$value['pay_type']).'" name="discount['.$value['fc_perid'].']" class="only_number late_charge" value="'.$value['fdisamount'].'"/>
 									
 									</td>
 						</tr>';
@@ -437,29 +412,37 @@ function collect(){
 	var error2=0;
 	 $classId=$('#fee_collect_class_id').val();
 				 $roll=$('#fee_collect_roll').val();
+				 alert($('.payable_amt').length);
 				 $('.payable_amt').each(function(i){
-					 $id=$(this).attr('rel');		
+					 $id=$(this).attr('rel');	
+				 alert($id+'='+$(this).val());
 					 if($(this).val()!=""){
 						 var num = $('#payable_actual_'+$id).val();
 						 num=num.replace(/,/g , "");
                      if($(this).val()>Number(num)|| $(this).val()==0){
 						$(this).css('border','1px solid red'); 
-						error++;
+						error++;  
 					 }
 					}else{
-						error2++;
+						error2++; 
 					}
 					
 					if($(this).val()==""  || $(this).val()==0){
 						if($('#late_chrage_'+$id).val()>0 && $('#late_chrage_'+$id).val()!=""){
 							$('#late_chrage_'+$id).css('border','1px solid red'); 
-							error++;
+							error++; //alert(153);
 						}
 					}					
 				 });
+				 $('.payable_amt').each(function(i){
+					 $id=$(this).attr('rel');	
+				 alert($id+'='+$(this).val());
+				 });
+				 alert(error2); return false;
 				if($('.payable_amt').length==error2){
 					$('.payable_amt').css('border','1px solid red'); 	error++;
 				}
+				
 				 $data1=$('#collect_fee_amt').serialize()+'&class='+$classId+'&roll='+$roll;
 				 if($classId>0 && $roll>0 && error==0){
 					$.ajax({

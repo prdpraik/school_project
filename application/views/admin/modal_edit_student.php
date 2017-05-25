@@ -104,6 +104,7 @@
                                     <input type="text" class="" name="mother_name" value="<?php echo $row['mother_name'];?>"/>
                                 </div>
                             </div>
+							<?php /*
                             <div class="control-group">
                                 <label class="control-label"><?php echo get_phrase('date_of_birth');?></label>
                                 <div class="controls">
@@ -160,7 +161,7 @@
                                     </select>
                                     
                                 </div>
-                            </div>
+                            </div> */?>
                             <div class="control-group">
 
                                 <label class="control-label"><?php echo get_phrase('Date of Joining'); ?></label>
@@ -172,6 +173,7 @@
                                 </div>
 
                             </div>
+							<?php /*
                             <div class="control-group">
 
                                 <label class="control-label"><?php echo get_phrase('birth_place'); ?></label>
@@ -182,7 +184,7 @@
 
                                 </div>
 
-                            </div>
+                            </div> */?> 
                             <!--<div class="control-group">
 
                                 <label class="control-label"><?php echo get_phrase('blood_group'); ?></label>
@@ -237,6 +239,7 @@
                                 </div>
 
                             </div>-->
+							<?php /*
                             <div class="control-group">
 
                                 <label class="control-label"><?php echo get_phrase('nationality'); ?></label>
@@ -248,6 +251,7 @@
                                 </div>
 
                             </div>
+							*/?>
                             <!--<div class="control-group">
 
                                 <label class="control-label"><?php echo get_phrase('student_qatar_id'); ?></label>
@@ -453,7 +457,7 @@
                                 </div>
 
                             </div>
-
+							<?php /*
                             <div class="control-group">
 
                                 <label class="control-label"><?php echo get_phrase('permanent_address'); ?></label>
@@ -464,8 +468,8 @@
                                     
                                 </div>
 
-                            </div>
-                            
+                            </div> */?>
+                            <?php /*
                             <div class="control-group">
 
                                 <label class="control-label"><?php echo get_phrase('previous_school_name'); ?></label>
@@ -476,10 +480,10 @@
 
                                 </div>
 
-                            </div>
+                            </div> */?>
 
                             
-
+<?php /*
                             <div class="control-group">
 
                                 <label class="control-label"><?php echo get_phrase('occupation'); ?></label>
@@ -490,8 +494,8 @@
 
                                 </div>                              
 
-                            </div>
-
+                            </div> */?>
+<?php /*
                             <div class="control-group">
 
                                 <label class="control-label"><?php echo get_phrase('income(per Annum)'); ?></label>
@@ -502,7 +506,7 @@
 
                                 </div>                              
 
-                            </div>
+                            </div> */ ?>
 										<!---------------------------------------->
 							 	<div class="control-group">
 								

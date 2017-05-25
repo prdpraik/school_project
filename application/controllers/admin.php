@@ -411,9 +411,19 @@ class Admin extends CI_Controller {
         }
 		if ($param2 == 'promote')
 		{
+			  $class_id    = $this->input->post('class_id');
+			//echo 'SELECT MAX(CONVERT(roll,UNSIGNED INTEGER))+1 AS id FROM student WHERE class_id="'.$data['class_id'].'"';
+			 $next_roll=$this->db->query('SELECT MAX(CONVERT(roll,UNSIGNED INTEGER))+1 AS id FROM student WHERE class_id="'.$class_id.'"')->row()->id;
+			   if(empty($next_roll)){
+				   $next_roll=1;
+			   }
+			   //echo $next_roll; exit;
+			   $data['roll']    = $next_roll;
 			   $data['class_id']    = $this->input->post('class_id');
+			   
          	   $this->db->where('student_id', $param3);
            	   $this->db->update('student', $data);
+			  // print_r($this->db); exit;
 		//	   redirect(base_url() . 'index.php?admin/student/' . $param2, 'refresh');
 		  redirect(base_url() . 'index.php?admin/student/' . $param1, 'refresh');
         }
@@ -505,9 +515,6 @@ class Admin extends CI_Controller {
         $page_data['page_name'] = 'student';
         $page_data['page_title'] = get_phrase('view_student');
 		if(!empty($param1) && empty($param2)){
-			//$this->db->select_max('roll');
-			//$this->db->where('class_id',$param1);
-		   //$this->db->get('student');
 			$page_data['next_roll']=$this->db->query('SELECT MAX(CONVERT(roll,UNSIGNED INTEGER))+1 AS id FROM student WHERE class_id="'.$param1.'"')->row()->id;
 			if(empty($page_data['next_roll'])){
 				$page_data['next_roll']=1;
@@ -689,8 +696,11 @@ if(isset($_POST['bulk-promote'])){
     for ($i = 0; $i < $count; $i++) {
         if (isset($_POST['custom-student' . $i])) {
            $student_id = $_POST['custom-student' . $i];
-		  
-        $query = $this->db->query("update student set class_id=$class_id where student_id=$student_id");
+		  $next_roll=$this->db->query('SELECT MAX(CONVERT(roll,UNSIGNED INTEGER))+1 AS id FROM student WHERE class_id="'.$class_id.'"')->row()->id;
+		  if(empty($next_roll)){
+			  $next_roll=1;
+		  }
+        $query = $this->db->query("update student set class_id=$class_id, roll=$next_roll where student_id=$student_id");
             
         }
     }
@@ -4997,7 +5007,7 @@ if($this->phpmailer->Send()){
 		//print_r($page_data);
 	
 		$page_data['fcollectrolldata'] = $this->fee_model->getfeerolldata($fc_cid,$fc_rollid);
-		
+		$page_data['balance'] = $this->fee_model->getBalanceAmount($fc_cid,$fc_rollid); 
 		//$page_data['fcollectstandarddata'] = $this->fee_model->getfeestandarddata($fc_cid);
 		
 		$page_data['class_roll_data'] = array('fc_class_id' => $fc_cid, 'fc_roll_id' => $fc_rollid);
@@ -5045,19 +5055,16 @@ if($this->phpmailer->Send()){
 		foreach($_POST['payable_amt'] as $key=>$value){
 					if($value>0){
 					$fee_collect_data['fee_collection_id'] = $this->getString();
-					$fee_collect_data['fee_collection_particular_id'] = $_POST['fc_perid'][$key];//$this->input->post('process_payment_particular_id');
+					$fee_collect_data['fee_collection_particular_id'] = $_POST['fc_perid'][$key];
+					$fee_collect_data['type'] = $_POST['pay_type'][$key];
 					$fee_collection+= $fee_collect_data['fee_collection_amount'] = $value;
-					$late_charge+= $fee_collect_data['fee_collection_late_charge'] = $_POST['late_chrage'][$key]; //$this->input->post('process_payment_late_charge');
-					//print_r($fee_collect_data);
+					$late_charge+= $fee_collect_data['fee_collection_late_charge'] = $_POST['late_chrage'][$key];
 					$discount+= $fee_collect_data['discount_amt'] = $_POST['discount'][$key];
 					
 						$res = $this->fee_model->insert_fee_collection($fee_collect_data);
 					}
 		}
-		
-		//echo $fee_collect_data['fk_collections_master'];
 		$this->fee_model->update_fee_collection_master(array('fee_collected'=>$fee_collection,'late_charge'=>$late_charge,'discount_amt'=>$discount),$fee_collect_data['fk_collections_master']);
-		//echo '</pre>';
 	}
 	
 	function fee_collect_process_data(){

@@ -323,6 +323,15 @@ class fee_model extends MY_Model {
 		return $query->result();
 		
 	}
+	function getBalanceAmount($fc_cid=0,$fc_rollid=0){
+		$this->db->select('fee_balance.id,fee_balance.balance,class.name,class.name_numeric');
+		$this->db->from('fee_balance');
+		$this->db->join('class','class.class_id = fee_balance.class_id');
+	
+		//$this->db->where('balance<>0 AND student_id='.$fc_rollid);
+		$query = $this->db->get();
+		return $query->result();
+	}
 	
 	function getfeestandarddata($fc_cid){
 		

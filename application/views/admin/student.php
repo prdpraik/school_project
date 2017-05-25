@@ -586,7 +586,7 @@ No. of student in a class <?php echo $student_count; ?>
                                 </div>
 
                             </div>
-							<div class="control-group">
+							<?php /*<div class="control-group">
 
                                 <label class="control-label"><?php echo get_phrase('Date of Birth'); ?></label>
 
@@ -645,7 +645,7 @@ No. of student in a class <?php echo $student_count; ?>
 
                                 </div>
 
-                            </div>
+                            </div> */?>
                             <div class="control-group">
 
                                 <label class="control-label"><?php echo get_phrase('Date of Joining'); ?></label>
@@ -682,7 +682,7 @@ No. of student in a class <?php echo $student_count; ?>
 
                             </div>
 							
-                            
+                            <?php /*
 
                             <div class="control-group">
 
@@ -694,7 +694,7 @@ No. of student in a class <?php echo $student_count; ?>
 
                                 </div>
 
-                            </div>
+                            </div>  */?>
 
                             <!--<div class="control-group">
 
@@ -743,7 +743,7 @@ No. of student in a class <?php echo $student_count; ?>
                                 </div>
 
                             </div>-->
-
+							<?php /*
                             <div class="control-group">
 
                                 <label class="control-label"><?php echo get_phrase('nationality'); ?></label>
@@ -754,7 +754,7 @@ No. of student in a class <?php echo $student_count; ?>
 
                                 </div>
 
-                            </div>
+                            </div> */?> 
                             <!--<div class="control-group">
 
                                 <label class="control-label"><?php echo get_phrase('student_qatar_id'); ?></label>
@@ -890,7 +890,7 @@ No. of student in a class <?php echo $student_count; ?>
                                 </div>
 
                             </div>--> 
-                            
+                            <?php /*
                              <div class="control-group">
 
                                 <label class="control-label"><?php echo get_phrase('father occupation'); ?></label>
@@ -902,7 +902,7 @@ No. of student in a class <?php echo $student_count; ?>
                                 </div>                              
 
                             </div>
-
+*/?>  <?php /*
                             <div class="control-group">
 
                                 <label class="control-label"><?php echo get_phrase('income(per Annum)'); ?></label>
@@ -913,7 +913,7 @@ No. of student in a class <?php echo $student_count; ?>
 
                                 </div>                              
 
-                            </div>
+                            </div> */?>
                            <!-- <div class="control-group">
 
                                 <label class="control-label"><?php echo get_phrase('father_qatar_id'); ?></label>
@@ -974,7 +974,7 @@ No. of student in a class <?php echo $student_count; ?>
                                 </div>
 
                             </div>
-
+<?php /*
                             <div class="control-group">
 
                                 <label class="control-label"><?php echo get_phrase('permanent_address'); ?></label>
@@ -985,9 +985,9 @@ No. of student in a class <?php echo $student_count; ?>
                                     
                                 </div>
 
-                            </div>
+                            </div> */?>
                             
-
+<?php /*
                             <div class="control-group">
 
                                 <label class="control-label"><?php echo get_phrase('previous_school_name'); ?></label>
@@ -998,7 +998,7 @@ No. of student in a class <?php echo $student_count; ?>
 
                                 </div>
 
-                            </div>
+                            </div> */?>
 
                             
 

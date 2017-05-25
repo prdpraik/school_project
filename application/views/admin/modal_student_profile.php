@@ -67,12 +67,12 @@ foreach($student_info as $row):?>
             </tr>
             <?php endif;?>
 
-            <?php if($row['birthday'] != ''):?>
+            <?php /*if($row['birthday'] != ''):?>
             <tr>
                 <td>Birthday</td>
                 <td><b><?php echo $row['birthday'];?></b></td>
             </tr>
-            <?php endif;?>
+            <?php endif; */?>
             
             <?php if($row['doj'] != ''):?>
             <tr>
@@ -81,12 +81,12 @@ foreach($student_info as $row):?>
             </tr>
             <?php endif;?>
         
-            <?php if($row['birth_place'] != ''):?>
+            <?php /*if($row['birth_place'] != ''):?>
             <tr>
                 <td>Birth Place</td>
                 <td><b><?php echo $row['birth_place'];?></b></td>
             </tr>
-            <?php endif;?>
+            <?php endif; */?>
 
             <?php /*if($row['blood_group'] != ''):?>
             <tr>
@@ -123,12 +123,12 @@ foreach($student_info as $row):?>
             </tr>
             <?php endif; */?>
 
-            <?php if($row['nationality'] != ''):?>
+            <?php /*if($row['nationality'] != ''):?>
             <tr>
                 <td>Nationality</td>
                 <td><b><?php echo $row['nationality'];?></b></td>
             </tr>
-            <?php endif;?>
+            <?php endif; */?>
             
             <?php if($row['student_cid'] != 0):?>
             <tr>
@@ -218,12 +218,12 @@ foreach($student_info as $row):?>
             </tr>
             <?php endif; */?>
 
-             <?php if($row['previous_school_name'] != ''):?>
+             <?php /*if($row['previous_school_name'] != ''):?>
             <tr>
                 <td>Previous School Name</td>
                 <td><b><?php echo $row['previous_school_name'];?></b></td>
             </tr>
-            <?php endif;?>
+            <?php endif; */?>
 
              <?php if($row['address'] != ''):?>
             <tr>
@@ -234,30 +234,30 @@ foreach($student_info as $row):?>
             </tr>
             <?php endif;?>
 
-             <?php if($row['permanent_address'] != ''):?>
+             <?php /*if($row['permanent_address'] != ''):?>
             <tr>
                 <td style="vertical-align:top;">Permanent Address</td>
                 <td><b><?php echo $row['permanent_address'];?></b>
                     <div id="map1" style="width:200px;height:200px;border-radius:50%;"></div>
                 </td>
             </tr>
-            <?php endif;?>
+            <?php endif; */ ?>
 
             
 
-             <?php if($row['occupation'] != ''):?>
+             <?php /*if($row['occupation'] != ''):?>
             <tr>
                 <td>Occupation</td>
                 <td><b><?php echo $row['occupation'];?></b></td>
             </tr>
-            <?php endif;?>
+            <?php endif; */?>
 
-             <?php if($row['income_per_annum'] != ''):?>
+             <?php /* if($row['income_per_annum'] != ''):?>
             <tr>
                 <td>Income(per Annum)</td>
                 <td><b><?php echo $row['income_per_annum'];?></b></td>
             </tr>
-            <?php endif;?>
+            <?php endif; */?>
 			
 			<tr>
                 <td>RTE</td>
