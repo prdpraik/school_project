@@ -334,10 +334,17 @@ class Admin extends CI_Controller {
     /*     * **MANAGE STUDENTS CLASSWISE**** */
 
     function student($param1 = '', $param2 = '', $param3 = '') {
+		//echo $this->session->userdata('accountant_login'); 
+		//echo '<pre>';
+		//print_r($this->session);
+		//echo 123;
+		//exit;
  //exit;
-
-        if ($this->session->userdata('admin_login') != 1)
-            redirect('login', 'refresh');
+//print_r(($this->session->userdata('admin_login') != 1 || $this->session->userdata('accountant_login') !=1));
+     if(!in_array(1,array($this->session->userdata('admin_login'),$this->session->userdata('accountant_login'))))
+		 redirect('login', 'refresh');
+        //if ($this->session->userdata('admin_login') != 1 || $this->session->userdata('accountant_login') !=1)
+            //echo 123; //redirect('login', 'refresh');
         if ($param1 == 'create') {
             $data['name'] = $this->input->post('firstname').' '.$this->input->post('lastname');            
             $data['sex'] = $this->input->post('sex');
@@ -3342,7 +3349,8 @@ if($this->phpmailer->Send()){
 	
 	
 	function daily_attendence($class_id,$addate){
-		 if ($this->session->userdata('admin_login') != 1)
+		 //if ($this->session->userdata('admin_login') != 1)
+		 if(!in_array(1,array($this->session->userdata('admin_login'),$this->session->userdata('accountant_login'))))
             redirect(base_url(), 'refresh');
 		if( (isset($class_id) && $class_id!='') && (isset($addate) && $addate!='')  ){
 			
@@ -3368,7 +3376,7 @@ if($this->phpmailer->Send()){
 		$page_data['page_info'] = 'Daily Attendence';
         $page_data['page_name'] = 'daily_attendence';
         $page_data['page_title'] = get_phrase('manage_daily_attendence');
-        $this->load->view('index', $page_data);
+        $this->load->view('admin/index', $page_data);
 		
 	}
 	
@@ -4927,7 +4935,8 @@ if($this->phpmailer->Send()){
 	
 	
 	function feecollect(){
-		if ($this->session->userdata('admin_login') != 1)
+		//if ($this->session->userdata('admin_login') != 1)
+		if(!in_array(1,array($this->session->userdata('admin_login'),$this->session->userdata('accountant_login'))))
             redirect(base_url(), 'refresh');
       	$this->load->model('fee_model');
 		
@@ -4935,10 +4944,11 @@ if($this->phpmailer->Send()){
 		
         $page_data['page_name']  = 'feecollect';
         $page_data['page_title'] = get_phrase('fee_collect');
-        $this->load->view('index', $page_data);
+        $this->load->view('admin/index', $page_data);
 	}
     function feecollectall(){
-			if ($this->session->userdata('admin_login') != 1)
+			//if ($this->session->userdata('admin_login') != 1)
+		 if(!in_array(1,array($this->session->userdata('admin_login'),$this->session->userdata('accountant_login'))))
             redirect(base_url(), 'refresh');
       	$this->load->model('fee_model');
 		
@@ -5008,6 +5018,8 @@ if($this->phpmailer->Send()){
 	
 		$page_data['fcollectrolldata'] = $this->fee_model->getfeerolldata($fc_cid,$fc_rollid);
 		$page_data['balance'] = $this->fee_model->getBalanceAmount($fc_cid,$fc_rollid); 
+		//echo '<pre>';
+		//print_r($page_data['balance']);
 		//$page_data['fcollectstandarddata'] = $this->fee_model->getfeestandarddata($fc_cid);
 		
 		$page_data['class_roll_data'] = array('fc_class_id' => $fc_cid, 'fc_roll_id' => $fc_rollid);
@@ -5029,7 +5041,8 @@ if($this->phpmailer->Send()){
 		return $rndm_str.=random_string('alpha',4);
 	}
 	function fee_collect_process_data_all(){
-		//print_r($_POST); 
+		//echo '<pre>';
+		
 		$this->load->model('fee_model');
 		$pay_mode = $this->input->post('process_payment_mode');
 		if(in_array($pay_mode,array(1,2,3))){
@@ -5048,22 +5061,46 @@ if($this->phpmailer->Send()){
         $user_id = $this->session->userdata($login_type.'_id');
 		$data_array['collection_added_by']=$fee_collect_data['fee_collection_added_by'] = $user_id ;
 		$data_array['unique_key']=$this->getString();
+		
 		if(count($_POST['payable_amt'])){
 			$fee_collect_data['fk_collections_master']=$this->fee_model->insert_fee_collection_master($data_array);
 		}
 	    $fee_collection=$late_charge=$discount=0;
+		$payable_actual_array=array();
+	//print_r($_POST['payable_actual']['21A']);
 		foreach($_POST['payable_amt'] as $key=>$value){
+			 //echo $_POST['discount'][$key];
 					if($value>0){
 					$fee_collect_data['fee_collection_id'] = $this->getString();
 					$fee_collect_data['fee_collection_particular_id'] = $_POST['fc_perid'][$key];
 					$fee_collect_data['type'] = $_POST['pay_type'][$key];
-					$fee_collection+= $fee_collect_data['fee_collection_amount'] = $value;
+					$fee_collection+= $fee_collect_data['fee_collection_amount'] = (float)$value;
 					$late_charge+= $fee_collect_data['fee_collection_late_charge'] = $_POST['late_chrage'][$key];
 					$discount+= $fee_collect_data['discount_amt'] = $_POST['discount'][$key];
-					
-						$res = $this->fee_model->insert_fee_collection($fee_collect_data);
+				
+					//$payable_actual_array[]= (int) str_replace(',','',$_POST['payable_actual'][$key]);
+					//echo 
+					$res = $this->fee_model->insert_fee_collection($fee_collect_data);
 					}
 		}
+		//print_r($_POST['payable_amt']);
+		$fee_collection_array=array();
+		foreach($_POST['payable_amt'] as $key=>$value){
+			$fee_collection_array[]= (float) $value;
+		}
+		//print_r($fee_collection_array);
+		$payable_actual_array_val= (float) array_sum($fee_collection_array);
+		foreach($_POST['payable_actual'] as $key=>$value){
+			$payable_actual_array[]= (float) str_replace(',','',$_POST['payable_actual'][$key]);
+		}
+	
+		$payable_actual= (float) array_sum($payable_actual_array);
+		//echo $fee_collection;
+		//print_r($_POST['payable_actual']);
+		$balance=(float)$payable_actual-(float)$payable_actual_array_val;
+		
+		$this->fee_model->updateBalance($data_array['fk_roll_id'],$data_array['fk_class_id'],$balance);
+		
 		$this->fee_model->update_fee_collection_master(array('fee_collected'=>$fee_collection,'late_charge'=>$late_charge,'discount_amt'=>$discount),$fee_collect_data['fk_collections_master']);
 	}
 	
@@ -5205,9 +5242,14 @@ if($this->phpmailer->Send()){
 	 }
   //print_r($receiptdata);
 	$data=$this->fee_model->getFeeCollections($receiptdata->pk_collections_master);
+	//echo '<pre>';
 	//print_r($data);
+	//echo '</pre>'; exit;
 	$str="";
 	foreach($data as $key=>$value){
+		if($value->type==1){
+			$value->fee_category=$value->fee_particular_name="Balance";
+		}
 		$str .="<tr><td>".$value->fee_category."</td>
 		<td>".$value->fee_particular_name."</td>
 		<td>".$value->fee_collection_amount."</td>

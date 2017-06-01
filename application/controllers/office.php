@@ -35,6 +35,7 @@ class Office extends CI_Controller {
         $user_id = $this->session->userdata($login_type.'_id');
         $results = $this->db->get_where('email',array('type' => strtolower($login_type)))->result_array();
         $i = 0 ;
+		
         foreach($results as $result){
              $unread = explode(',',$result['unread']);
              if(in_array($user_id,$unread)){

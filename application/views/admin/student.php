@@ -1,4 +1,6 @@
-<?php if ($class_id != ""):
+<?php
+
+ if ($class_id != ""):
 
 
  ?>

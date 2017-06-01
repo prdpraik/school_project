@@ -324,10 +324,14 @@ class fee_model extends MY_Model {
 		
 	}
 	function getBalanceAmount($fc_cid=0,$fc_rollid=0){
-		$this->db->select('fee_balance.id,fee_balance.balance,class.name,class.name_numeric');
+		//echo $fc_cid.'#'.$fc_rollid;
+		$this->db->select('fee_balance.id,fee_balance.balance,class.name,class.name_numeric,fee_collections.fee_collection_amount');
 		$this->db->from('fee_balance');
 		$this->db->join('class','class.class_id = fee_balance.class_id');
-	
+		$this->db->join('fee_collections','fee_collections.fee_collection_particular_id = fee_balance.id','LEFT');
+		$this->db->where('student_id ',$fc_rollid);
+		$this->db->where('fee_balance.class_id !=',$fc_cid); 
+		$this->db->where('fee_balance.show_flag','0'); 	
 		//$this->db->where('balance<>0 AND student_id='.$fc_rollid);
 		$query = $this->db->get();
 		return $query->result();
@@ -541,6 +545,25 @@ class fee_model extends MY_Model {
 		}
 		$query =  $this->db->get_where('student');
 		return $query->result();
+	}
+	
+	function updateBalance($student_id,$class_id,$balance){
+		$this->db->select('id');
+		$this->db->where('student_id',$student_id);
+		$this->db->where('class_id',$class_id);
+		$num_rows=$this->db->count_all_results('fee_balance');
+		if($num_rows==0){
+			
+			$this->db->where('student_id',$student_id);
+			$this->db->update('fee_balance',array('show_flag'=>"1"));
+
+			$this->db->insert('fee_balance',array('student_id'=>$student_id,'class_id'=>$class_id,'balance'=>$balance));
+		}else {
+			$this->db->where('student_id',$student_id);
+			$this->db->where('class_id',$class_id);
+		    $this->db->update('fee_balance',array('balance'=>$balance));
+		}
+		//$query = $this->db->get_where('fee_balance');
 	}
 	
 }

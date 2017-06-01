@@ -41,9 +41,7 @@ class Accountant extends CI_Controller
 
     /***default functin, redirects to login page if no admin logged in yet***/
 
-    public function index()
-
-    {
+    public function index(){
         if ($this->session->userdata('student_login') != 1)
             redirect(base_url() . 'index.php?login', 'refresh');
       if ($this->session->userdata('student_login') == 1){
@@ -56,10 +54,7 @@ class Accountant extends CI_Controller
 
     /***ADMIN DASHBOARD***/
 
-    function dashboard()
-
-    {
-	    
+    function dashboard() {
         $page_data['page_name'] = 'dashboard';       
         $page_data['page_name']  = 'dashboard';
 

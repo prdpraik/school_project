@@ -99,7 +99,7 @@
         <!------student----->
 		<li class="<?php if($page_name == 'student')echo 'dark-nav active';?>">
 			<span class="glow"></span>
-				<a href="<?php echo base_url();?>index.php?principal/student" rel="tooltip" data-placement="right" 
+				<a href="<?php echo base_url();?>index.php?admin/student" rel="tooltip" data-placement="right" 
                 	data-original-title="<?php echo get_phrase('student_help');?>">
 					<i class="icon-user icon-plus"></i>                    
 					<span><?php echo get_phrase('student');?></span>
@@ -250,7 +250,7 @@
         <!------daily_attendence----->
 		<li class="<?php if($page_name == 'daily_attendence' || $page_name ==  'daily_attendence_view')echo 'dark-nav active';?>">
 			<span class="glow"></span>
-				<a href="<?php echo base_url();?>index.php?principal/daily_attendence" rel="tooltip" data-placement="right" 
+				<a href="<?php echo base_url();?>index.php?admin/daily_attendence" rel="tooltip" data-placement="right" 
                 	data-original-title="<?php echo get_phrase('daily_attendence_help');?>">
 					<i class="icon-user icon-plus"></i>  
 					<span><?php echo get_phrase('student daily_attendence');?></span>
@@ -376,7 +376,7 @@
                     <!------Class wise fees----->
                     <li class="<?php if($page_name == 'feecollect')echo 'dark-nav active';?>">
                         <span class="glow"></span>
-                            <a href="<?php echo base_url();?>index.php?principal/feecollect" rel="tooltip" data-placement="right" 
+                            <a href="<?php echo base_url();?>index.php?admin/feecollectall" rel="tooltip" data-placement="right" 
                                 data-original-title="<?php echo get_phrase('fee_collect_help');?>">
 								<i class="icon-user icon-plus"></i>  
                                 <span><?php echo get_phrase('fee_collect');?></span>

@@ -1,3 +1,4 @@
+	
 	<div id="custom-tam-office-dashboard">
     
     	<!--<div class="row-fulid">
@@ -67,13 +68,13 @@
 				<!--big normal buttons-->
 				<div class="action-nav-normal">
                 	<div id="cstm-dboard-main-blk">
-					<a href="<?php echo base_url();?>index.php?office/student">
+					<a href="<?php echo base_url();?>index.php?admin/student">
                                 <div class="cstm-dboard-blck bg-deep-green">                               
                                 	<div><i class="fa fa-user fa-4x"></i></div>
                                 	<div><?php echo get_phrase('student_admission');?></div>
                                 </div>
                                 </a>
-					<a href="<?php echo base_url();?>index.php?office/teacher">
+					<!--<a href="<?php echo base_url();?>index.php?office/teacher">
                                 <div class="cstm-dboard-blck bg-deep-terques">
                                 	<div><i class="fa fa-users fa-4x"></i></div>
                                 	<div><?php echo get_phrase('teaching_staff');?></div>
@@ -92,8 +93,13 @@
                                 	<div><i class="fa fa-calendar fa-4x"></i></div>
                                 	<div><?php echo get_phrase('class_routine');?></div>
                                 </div>
-                            	</a>
-                    <a href="<?php echo base_url();?>index.php?office/feecollect">
+                            	</a> -->
+					 <a href="<?php echo base_url();?>index.php?admin/daily_attendence">
+                            	<div class="cstm-dboard-blck bg-light-blue">
+                                	<div><i class="fa fa-check-square-o fa-4x"></i></div>
+                                	<div><?php echo get_phrase('student_daily_attendence');?></div>
+                                </div>
+                    <a href="<?php echo base_url();?>index.php?admin/feecollectall">
                             	<div class="cstm-dboard-blck bg-deep-thistle">
                                 	<div><i class="fa fa-money fa-4x"></i></div>
                                 	<div><?php echo get_phrase('payment');?></div>
@@ -106,13 +112,13 @@
 							<span><?php echo get_phrase('frontdesk_help');?></span>
                             
 							</a>
-						</div>-->
+						</div>
 						<a href="<?php echo base_url();?>index.php?office/tasks">
                             	<div class="cstm-dboard-blck bg-deep-red">
                                 	<div><i class="fa fa-flag-o fa-4x"></i></div>
                                 	<div><?php echo get_phrase('things_do_to');?></div>
                                 </div>
-                                </a>
+                                </a>-->
 						
 						<!--<div class="span2 ">
 							<a href="<?php echo base_url();?>index.php?office/book">
@@ -158,7 +164,7 @@
 							<span><?php echo get_phrase('backup');?></span>
 							</a>
 						</div>-->
-						 <a href="<?php echo base_url();?>index.php?office/noticeboard">
+						 <!--<a href="<?php echo base_url();?>index.php?office/noticeboard">
                             	<div class="cstm-dboard-blck bg-deep-red">
                                 	<div><i class="fa fa-clipboard fa-4x"></i></div>
                                 	<div><?php echo get_phrase('noticeboard');?></div>
@@ -183,7 +189,7 @@
                                 	<div><i class="fa fa-envelope fa-4x"></i></div>
                                 	<div><?php echo get_phrase('mail_/_SMS');?></div>
                                 </div>
-                          		</a>
+                          		</a>-->
                                 
 						
 						<!--<div class="span2 ">
